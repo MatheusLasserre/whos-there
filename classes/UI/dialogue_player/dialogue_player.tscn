@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnywaxicq8l84"]
+
+[ext_resource type="Script" uid="uid://cvnhlqm2qn62d" path="res://classes/UI/dialogue_player/dialogue_player.gd" id="1_dv1er"]
+[ext_resource type="Shader" uid="uid://cnhcg5mg5jefb" path="res://classes/UI/dialogue_player/simple_blur.gdshader" id="2_dai85"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jm0dm"]
+shader = ExtResource("2_dai85")
+shader_parameter/blur_amount = 1.464
+
+[node name="DialoguePlayer" type="CanvasLayer"]
+script = ExtResource("1_dv1er")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -226.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.209938, 1, 0.95323, 1)
+
+[node name="TextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -225.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center][font_size=36]Test [color=red]Yap Box[/color][/font_size][/center]"
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jm0dm")
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -226.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.486275)
+
+[connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]
+[connection signal="gui_input" from="TextLabel" to="." method="_on_text_label_gui_input"]
+[connection signal="gui_input" from="Blur" to="." method="_on_background_gui_input"]

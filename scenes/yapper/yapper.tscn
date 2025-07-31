@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cja6ssx4i36l4"]
+
+[ext_resource type="Script" uid="uid://dvjpfabevxk3w" path="res://scenes/yapper/yapper.gd" id="1_4g8nm"]
+[ext_resource type="Texture2D" uid="uid://cma6hejox7fku" path="res://assets/backgrounds/background_menu.png" id="2_kjd6l"]
+[ext_resource type="PackedScene" uid="uid://cnywaxicq8l84" path="res://classes/UI/dialogue_player/dialogue_player.tscn" id="3_58ldr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
+texture = ExtResource("2_kjd6l")
+modulate_color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g8nm"]
+bg_color = Color(0.682353, 0.00392157, 0.890196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58ldr"]
+bg_color = Color(0.956357, 0.890148, 0.671849, 1)
+
+[sub_resource type="Theme" id="Theme_odows"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_4g8nm")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_58ldr")
+
+[sub_resource type="GDScript" id="GDScript_58ldr"]
+script/source = "extends ProgressBar
+"
+
+[node name="Yapper" type="Node2D"]
+script = ExtResource("1_4g8nm")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r8yej")
+
+[node name="SanityMeter" type="ProgressBar" parent="UI"]
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 59.0
+offset_bottom = 488.0
+theme = SubResource("Theme_odows")
+value = 25.0
+fill_mode = 3
+show_percentage = false
+script = SubResource("GDScript_58ldr")
+
+[node name="DialoguePlayer" parent="UI" instance=ExtResource("3_58ldr")]
+process_mode = 3
+scene_text_file = "res://scenes/yapper/yapper.json"
