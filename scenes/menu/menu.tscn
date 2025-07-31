@@ -1,0 +1,262 @@
+[gd_scene load_steps=14 format=3 uid="uid://wxcorirb3w5x"]
+
+[ext_resource type="Script" uid="uid://bjyytlqn5frvc" path="res://scenes/menu/menu.gd" id="1_037ec"]
+[ext_resource type="Texture2D" uid="uid://cma6hejox7fku" path="res://assets/backgrounds/background_menu.png" id="1_e0arn"]
+[ext_resource type="Theme" uid="uid://k0g0my122iix" path="res://themes/theme.tres" id="2_037ec"]
+[ext_resource type="Script" uid="uid://fgbbcroce6xn" path="res://scenes/menu/buttons.gd" id="3_3y2rt"]
+[ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="3_y1o0p"]
+[ext_resource type="Script" uid="uid://c330xtqbiqs5f" path="res://scenes/menu/settings.gd" id="5_y1o0p"]
+[ext_resource type="PackedScene" uid="uid://b2mdfxb2cyxpg" path="res://classes/UI/audio_controller/audio_controller.tscn" id="6_r8yej"]
+[ext_resource type="Script" uid="uid://ca27i5iu7hdxt" path="res://scenes/menu/option_button.gd" id="8_t0a87"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
+texture = ExtResource("1_e0arn")
+modulate_color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1o0p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0arn"]
+bg_color = Color(0.813258, 0.813258, 0.813258, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_037ec"]
+bg_color = Color(0.564962, 0.564962, 0.564962, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1o0p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_037ec")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r8yej")
+
+[node name="Buttons" type="VBoxContainer" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 4.0
+offset_right = 176.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+script = ExtResource("3_3y2rt")
+
+[node name="Play" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_037ec")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y1o0p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e0arn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_037ec")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1o0p")
+text = "Play"
+
+[node name="Settings" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y1o0p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e0arn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_037ec")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1o0p")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y1o0p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e0arn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_037ec")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1o0p")
+text = "Quit
+"
+
+[node name="Title" type="VBoxContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 42.0
+offset_right = 220.0
+offset_bottom = 243.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="Whos" type="Label" parent="UI/Title"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_font_sizes/font_size = 120
+text = "Who's"
+horizontal_alignment = 1
+
+[node name="There" type="Label" parent="UI/Title"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_font_sizes/font_size = 100
+text = "There"
+horizontal_alignment = 1
+
+[node name="Settings" type="Control" parent="UI" node_paths=PackedStringArray("buttons_container")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_y1o0p")
+buttons_container = NodePath("../Buttons")
+
+[node name="Panel" type="Panel" parent="UI/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.5
+offset_top = -143.0
+offset_right = 344.5
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Settings/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="UI/Settings/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -135.5
+offset_right = 136.5
+offset_bottom = 135.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="SFX" parent="UI/Settings/Panel/Options" instance=ExtResource("6_r8yej")]
+layout_mode = 2
+audio_name = "SFX"
+bus_channel = "SFX"
+
+[node name="Music" parent="UI/Settings/Panel/Options" instance=ExtResource("6_r8yej")]
+layout_mode = 2
+bus_channel = "Music"
+
+[node name="Window" type="MarginContainer" parent="UI/Settings/Panel/Options"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Settings/Panel/Options/Window"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="UI/Settings/Panel/Options/Window/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_font_sizes/font_size = 20
+text = "Window"
+
+[node name="OptionButton" type="OptionButton" parent="UI/Settings/Panel/Options/Window/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("8_t0a87")
+
+[node name="back" type="Button" parent="UI/Settings/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -57.0
+offset_right = 100.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y1o0p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y1o0p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e0arn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_037ec")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1o0p")
+text = "Back
+"
