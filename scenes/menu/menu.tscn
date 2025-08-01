@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://wxcorirb3w5x"]
+[gd_scene load_steps=19 format=3 uid="uid://wxcorirb3w5x"]
 
 [ext_resource type="Script" uid="uid://bjyytlqn5frvc" path="res://scenes/menu/menu.gd" id="1_037ec"]
 [ext_resource type="Texture2D" uid="uid://cma6hejox7fku" path="res://assets/backgrounds/background_menu.png" id="1_e0arn"]
 [ext_resource type="Theme" uid="uid://k0g0my122iix" path="res://themes/theme.tres" id="2_037ec"]
 [ext_resource type="Script" uid="uid://fgbbcroce6xn" path="res://scenes/menu/buttons.gd" id="3_3y2rt"]
+[ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="3_k48pe"]
 [ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="3_y1o0p"]
+[ext_resource type="Texture2D" uid="uid://ck5txrr3tvr6u" path="res://ENVIRONMENT/DOOR.png" id="4_f2fum"]
 [ext_resource type="Script" uid="uid://c330xtqbiqs5f" path="res://scenes/menu/settings.gd" id="5_y1o0p"]
 [ext_resource type="PackedScene" uid="uid://b2mdfxb2cyxpg" path="res://classes/UI/audio_controller/audio_controller.tscn" id="6_r8yej"]
 [ext_resource type="Script" uid="uid://ca27i5iu7hdxt" path="res://scenes/menu/option_button.gd" id="8_t0a87"]
@@ -12,6 +14,14 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
 texture = ExtResource("1_e0arn")
 modulate_color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kaijy"]
+texture = ExtResource("3_k48pe")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4i35"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcuxh"]
+texture = ExtResource("4_f2fum")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1o0p"]
 
@@ -57,6 +67,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_r8yej")
+
+[node name="Foreground" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kaijy")
+
+[node name="DoorContainer" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y4i35")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="UI/DoorContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.905
+
+[node name="Door" type="Panel" parent="UI/DoorContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rcuxh")
 
 [node name="Buttons" type="VBoxContainer" parent="UI"]
 anchors_preset = 8
@@ -127,9 +166,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -220.0
-offset_top = 42.0
+offset_top = 107.0
 offset_right = 220.0
-offset_bottom = 243.0
+offset_bottom = 308.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 

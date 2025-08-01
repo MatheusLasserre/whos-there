@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxp7xau32jb84"]
+
+[ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
+[ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
+[ext_resource type="Texture2D" uid="uid://w3dq4f35hkiy" path="res://ENVIRONMENT/BACKGROUBD.png" id="3_kelw5"]
+[ext_resource type="Texture2D" uid="uid://ck5txrr3tvr6u" path="res://ENVIRONMENT/DOOR.png" id="3_lfrn8"]
+[ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="6_bdhmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_87uf6"]
+texture = ExtResource("3_kelw5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdhmt"]
+texture = ExtResource("2_kelw5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87uf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a8rs"]
+bg_color = Color(0.813258, 0.813258, 0.813258, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j704"]
+bg_color = Color(0.564962, 0.564962, 0.564962, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp23o"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("open_door_button", "door_pivot")]
+script = ExtResource("1_5i0tg")
+open_door_button = NodePath("UI/Controls/VBoxContainer/Open Door")
+door_pivot = NodePath("UI/Door/SubViewportContainer/SubViewport/Door/Pivot")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lfrn8")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="UI/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.905
+
+[node name="Door" type="Panel" parent="UI/Background/AspectRatioContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_87uf6")
+
+[node name="Foreground" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bdhmt")
+
+[node name="Door" type="AspectRatioContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.905
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/Door"]
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UI/Door/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(651, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="UI/Door/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
+current = true
+size = 1.33619
+
+[node name="Door" type="Node3D" parent="UI/Door/SubViewportContainer/SubViewport"]
+
+[node name="Pivot" type="Node3D" parent="UI/Door/SubViewportContainer/SubViewport/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="UI/Door/SubViewportContainer/SubViewport/Door/Pivot"]
+transform = Transform3D(0.855, 0, 0, 0, -3.73732e-08, 0.855, 0, -0.855, -3.73732e-08, 0.7, 0, 0)
+texture = ExtResource("3_lfrn8")
+
+[node name="Controls" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Controls"]
+layout_mode = 2
+offset_left = 50.0
+offset_right = 264.0
+offset_bottom = 720.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Open Door" type="Button" parent="UI/Controls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_bdhmt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_87uf6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2a8rs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4j704")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kp23o")
+text = "Open Door
+"

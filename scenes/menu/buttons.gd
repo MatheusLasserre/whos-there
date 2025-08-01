@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 func handle_play_pressed() -> void:
-	pass
+	GameManager.set_state(GameManager.GameState.INGAME)
 
 func handle_settings_pressed() -> void:
 	settings_menu.visible = true
