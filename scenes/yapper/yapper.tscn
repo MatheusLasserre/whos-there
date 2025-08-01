@@ -1,16 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://cja6ssx4i36l4"]
+[gd_scene load_steps=12 format=3 uid="uid://cja6ssx4i36l4"]
 
 [ext_resource type="Script" uid="uid://dvjpfabevxk3w" path="res://scenes/yapper/yapper.gd" id="1_4g8nm"]
-[ext_resource type="Texture2D" uid="uid://cma6hejox7fku" path="res://assets/backgrounds/background_menu.png" id="2_kjd6l"]
-[ext_resource type="Shader" uid="uid://bna1wtmypmjlp" path="res://assets/shaders/dialogue_shader.tres" id="2_odows"]
+[ext_resource type="Shader" uid="uid://bwvvyvjuny2bu" path="res://assets/shaders/crt_blur.gdshader" id="2_odows"]
 [ext_resource type="PackedScene" uid="uid://cnywaxicq8l84" path="res://classes/UI/dialogue_player/dialogue_player.tscn" id="3_58ldr"]
+[ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="3_dw0vm"]
+[ext_resource type="Texture2D" uid="uid://w3dq4f35hkiy" path="res://ENVIRONMENT/BACKGROUBD.png" id="3_u4u7r"]
+[ext_resource type="Texture2D" uid="uid://bm463ejkqw4x" path="res://LARRY/LARRY1.png" id="4_u4u7r"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4u7r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dw0vm"]
 shader = ExtResource("2_odows")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
-texture = ExtResource("2_kjd6l")
-modulate_color = Color(0.381703, 0.381703, 0.381703, 1)
+shader_parameter/hardScan = -10.0
+shader_parameter/hardPix = -4.0
+shader_parameter/hardBloomScan = -2.0
+shader_parameter/hardBloomPix = -1.5
+shader_parameter/bloomAmount = 0.0625
+shader_parameter/warp = Vector2(0.015625, 0.0416667)
+shader_parameter/maskDark = 0.5
+shader_parameter/maskLight = 10.0
+shader_parameter/wiggleMult = 0.005
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g8nm"]
 bg_color = Color(0.682353, 0.00392157, 0.890196, 1)
@@ -29,16 +36,47 @@ script/source = "extends ProgressBar
 [node name="Yapper" type="Node2D"]
 script = ExtResource("1_4g8nm")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="UI"]
-material = SubResource("ShaderMaterial_u4u7r")
+[node name="Background" type="TextureRect" parent="Background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_r8yej")
+texture = ExtResource("3_u4u7r")
+
+[node name="Foreground" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dw0vm")
+
+[node name="CRTWarp Layer" type="CanvasLayer" parent="."]
+
+[node name="CRTWarp" type="ColorRect" parent="CRTWarp Layer"]
+material = SubResource("ShaderMaterial_dw0vm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Larry" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.353125
+anchor_top = 0.101389
+anchor_right = 0.645312
+anchor_bottom = 0.686111
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_u4u7r")
+
+[node name="UI" type="CanvasLayer" parent="."]
 
 [node name="SanityMeter" type="ProgressBar" parent="UI"]
 offset_left = 17.0
@@ -51,6 +89,6 @@ fill_mode = 3
 show_percentage = false
 script = SubResource("GDScript_58ldr")
 
-[node name="DialoguePlayer" parent="UI" instance=ExtResource("3_58ldr")]
+[node name="DialoguePlayer" parent="." instance=ExtResource("3_58ldr")]
 process_mode = 3
 scene_text_file = "res://scenes/yapper/yapper.json"
