@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cja6ssx4i36l4"]
+[gd_scene load_steps=11 format=3 uid="uid://cja6ssx4i36l4"]
 
 [ext_resource type="Script" uid="uid://dvjpfabevxk3w" path="res://scenes/yapper/yapper.gd" id="1_4g8nm"]
 [ext_resource type="Texture2D" uid="uid://cma6hejox7fku" path="res://assets/backgrounds/background_menu.png" id="2_kjd6l"]
+[ext_resource type="Shader" uid="uid://bna1wtmypmjlp" path="res://assets/shaders/dialogue_shader.tres" id="2_odows"]
 [ext_resource type="PackedScene" uid="uid://cnywaxicq8l84" path="res://classes/UI/dialogue_player/dialogue_player.tscn" id="3_58ldr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4u7r"]
+shader = ExtResource("2_odows")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
 texture = ExtResource("2_kjd6l")
@@ -28,6 +32,7 @@ script = ExtResource("1_4g8nm")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="UI"]
+material = SubResource("ShaderMaterial_u4u7r")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

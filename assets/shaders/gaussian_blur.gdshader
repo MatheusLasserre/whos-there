@@ -6,6 +6,11 @@ uniform float Quality = 3.0; // BLUR QUALITY (Default 4.0 - More is better but s
 uniform float Size = 4.0; // BLUR SIZE (Radius)
 // GAUSSIAN BLUR SETTINGS }}}
 
+varying vec4 vertex_color;
+void vertex() {
+	
+}
+
 void fragment() {
 	vec2 RESOLUTION = 1.0 / TEXTURE_PIXEL_SIZE;
 	
