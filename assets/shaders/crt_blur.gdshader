@@ -265,4 +265,3 @@ void fragment(){
   COLOR.a=1.0;  
   COLOR.rgb=ToSrgb(COLOR.rgb);
 }
-
