@@ -7,7 +7,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jm0dm"]
 shader = ExtResource("2_dai85")
-shader_parameter/blur_amount = 0.0
+shader_parameter/blur_amount = 0.5
 
 [node name="DialoguePlayer" type="CanvasLayer"]
 script = ExtResource("1_dv1er")
