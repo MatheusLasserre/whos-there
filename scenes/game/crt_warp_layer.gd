@@ -1,3 +1,4 @@
+class_name CRTWarpLayer
 extends CanvasLayer
 
 @onready var crt_warp: ColorRect = $CRTWarp

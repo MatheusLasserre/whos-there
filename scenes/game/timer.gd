@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 	if time > 0:
 		time -= delta
 	
-	text.text = "[center][color=black]%d:%02d[/color][/center]" % [int(time/60), int(time)%60]
+	text.text = "[center][font_size=32][color=black]%d:%02d[/color][/font_size][/center]" % [int(time/60), int(time)%60]

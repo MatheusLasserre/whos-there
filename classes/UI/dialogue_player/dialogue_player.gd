@@ -37,6 +37,7 @@ func type_text() -> void:
 	var count = text_label.get_total_character_count()
 	if text_label.visible_characters < count:
 		text_label.visible_characters += 1
+		SignalBus.emit_signal("larry_animate")
 	else:
 		is_typing = false
 
@@ -58,8 +59,8 @@ func on_display_dialog(text_key):
 		in_progress = true
 		selected_text = process_text_data(scene_text[text_key])
 		next_line()
-	else:
-		finish_typing()
+	#else:
+		#finish_typing()
 
 func process_text_data(data:Dictionary) -> Array:
 	var color = null

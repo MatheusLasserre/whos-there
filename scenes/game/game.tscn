@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bxp7xau32jb84"]
+[gd_scene load_steps=27 format=3 uid="uid://bxp7xau32jb84"]
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5txrr3tvr6u" path="res://ENVIRONMENT/DOOR.png" id="3_lfrn8"]
 [ext_resource type="Texture2D" uid="uid://bm463ejkqw4x" path="res://LARRY/LARRY1.png" id="4_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cnywaxicq8l84" path="res://classes/UI/dialogue_player/dialogue_player.tscn" id="5_bdhmt"]
+[ext_resource type="Script" uid="uid://dj61422p5d7k4" path="res://scenes/game/larry.gd" id="5_kp23o"]
 [ext_resource type="Script" uid="uid://d1rp4qsndbb6u" path="res://scenes/game/timer.gd" id="6_2a8rs"]
 [ext_resource type="Shader" uid="uid://bwvvyvjuny2bu" path="res://assets/shaders/crt_blur.gdshader" id="6_5i0tg"]
 [ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="6_bdhmt"]
@@ -112,6 +113,7 @@ grow_vertical = 2
 ratio = 0.905
 
 [node name="Door" type="Panel" parent="Background/Background/AspectRatioContainer"]
+texture_repeat = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_87uf6")
 
@@ -127,6 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Larry" type="CanvasLayer" parent="."]
+script = ExtResource("5_kp23o")
 
 [node name="TextureRect" type="TextureRect" parent="Larry"]
 anchors_preset = -1
@@ -205,7 +208,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DialoguePlayer" parent="." instance=ExtResource("5_bdhmt")]
 process_mode = 3
-scene_text_file = "res://scenes/yapper/yapper.json"
 
 [node name="Door" type="CanvasLayer" parent="."]
 visible = false
@@ -251,6 +253,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Controls"]
 layout_mode = 2
