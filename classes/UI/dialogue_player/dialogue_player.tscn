@@ -11,6 +11,7 @@ shader_parameter/blur_amount = 0.5
 
 [node name="DialoguePlayer" type="CanvasLayer"]
 script = ExtResource("1_dv1er")
+scene_text_file = "res://scenes/yapper/yapper.json"
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = -1
@@ -25,15 +26,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextLabel" type="RichTextLabel" parent="."]
 material = SubResource("ShaderMaterial_dai85")
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.249219
+anchor_top = 0.6875
+anchor_right = 0.753906
 anchor_bottom = 1.0
-offset_top = -225.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 bbcode_enabled = true
-text = "[center][font_size=36]Test [color=red]Yap Box[/color][/font_size][/center]"
+metadata/_edit_use_anchors_ = true
 
 [node name="Blur" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_jm0dm")
@@ -44,8 +46,82 @@ anchor_bottom = 1.0
 offset_top = -226.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 color = Color(1, 1, 1, 0.486275)
 
+[node name="Options" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.248437
+anchor_top = 0.6875
+anchor_right = 0.753125
+anchor_bottom = 1.0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Option1" type="ColorRect" parent="Options"]
+custom_minimum_size = Vector2(646, 70)
+layout_mode = 2
+color = Color(1, 0.844639, 0.710459, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Option1"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][color=black]Option1[/color][/center]"
+
+[node name="Option2" type="ColorRect" parent="Options"]
+custom_minimum_size = Vector2(646, 70)
+layout_mode = 2
+color = Color(1, 0.843137, 0.709804, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Option2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][color=black]Option2[/color][/center]"
+
+[node name="Option3" type="ColorRect" parent="Options"]
+custom_minimum_size = Vector2(646, 70)
+layout_mode = 2
+color = Color(1, 0.843137, 0.709804, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Option3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option3/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][color=black]Option3[/color][/center]"
+
 [connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]
-[connection signal="gui_input" from="TextLabel" to="." method="_on_text_label_gui_input"]
-[connection signal="gui_input" from="Blur" to="." method="_on_background_gui_input"]
+[connection signal="gui_input" from="Options/Option1" to="." method="_on_option_1_gui_input"]
+[connection signal="gui_input" from="Options/Option2" to="." method="_on_option_2_gui_input"]
+[connection signal="gui_input" from="Options/Option3" to="." method="_on_option_3_gui_input"]

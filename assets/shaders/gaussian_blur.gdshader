@@ -31,5 +31,5 @@ void fragment() {
     
     // Output to screen
     Color /= Quality * Directions + 1.0;
-    COLOR =  Color;
+    COLOR *=  Color;
 }

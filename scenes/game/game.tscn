@@ -1,11 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://bxp7xau32jb84"]
+[gd_scene load_steps=26 format=3 uid="uid://bxp7xau32jb84"]
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
+[ext_resource type="Script" uid="uid://dyd3v3fd83afd" path="res://scenes/game/crt_warp_layer.gd" id="3_4j704"]
 [ext_resource type="Texture2D" uid="uid://w3dq4f35hkiy" path="res://ENVIRONMENT/BACKGROUBD.png" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://ck5txrr3tvr6u" path="res://ENVIRONMENT/DOOR.png" id="3_lfrn8"]
 [ext_resource type="Texture2D" uid="uid://bm463ejkqw4x" path="res://LARRY/LARRY1.png" id="4_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cnywaxicq8l84" path="res://classes/UI/dialogue_player/dialogue_player.tscn" id="5_bdhmt"]
+[ext_resource type="Script" uid="uid://d1rp4qsndbb6u" path="res://scenes/game/timer.gd" id="6_2a8rs"]
 [ext_resource type="Shader" uid="uid://bwvvyvjuny2bu" path="res://assets/shaders/crt_blur.gdshader" id="6_5i0tg"]
 [ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="6_bdhmt"]
 
@@ -42,6 +44,16 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_58ldr")
 [sub_resource type="GDScript" id="GDScript_2a8rs"]
 script/source = "extends ProgressBar
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87uf6"]
+bg_color = Color(0.466667, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jirj"]
+bg_color = Color(0.466667, 0.713726, 0, 1)
+
+[sub_resource type="Theme" id="Theme_vaxfo"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_87uf6")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_5jirj")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87uf6"]
 
@@ -104,6 +116,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_87uf6")
 
 [node name="CRTWarp Layer" type="CanvasLayer" parent="."]
+script = ExtResource("3_4j704")
 
 [node name="CRTWarp" type="ColorRect" parent="CRTWarp Layer"]
 material = SubResource("ShaderMaterial_bdhmt")
@@ -139,19 +152,56 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_bdhmt")
 
 [node name="SanityMeter" type="ProgressBar" parent="Sanity"]
 anchors_preset = -1
-anchor_left = 0.261
-anchor_top = 0.018
-anchor_right = 0.294
-anchor_bottom = 0.674
-offset_left = -0.0800171
-offset_top = 0.039999
-offset_right = -0.320007
-offset_bottom = -0.280029
+anchor_left = 0.0140625
+anchor_top = 0.0194444
+anchor_right = 0.046875
+anchor_bottom = 0.977778
 theme = SubResource("Theme_87uf6")
 value = 25.0
 fill_mode = 3
 show_percentage = false
 script = SubResource("GDScript_2a8rs")
+metadata/_edit_use_anchors_ = true
+
+[node name="Health" type="CanvasLayer" parent="."]
+
+[node name="HealthMeter" type="ProgressBar" parent="Health"]
+anchors_preset = -1
+anchor_left = 0.0140625
+anchor_top = 0.609722
+anchor_right = 0.046875
+anchor_bottom = 0.977778
+offset_left = 64.0
+offset_top = 0.999999
+offset_right = 64.0
+offset_bottom = 1.0
+theme = SubResource("Theme_vaxfo")
+value = 25.0
+fill_mode = 3
+show_percentage = false
+script = SubResource("GDScript_2a8rs")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="CanvasLayer" parent="."]
+script = ExtResource("6_2a8rs")
+
+[node name="ColorRect" type="ColorRect" parent="Timer"]
+anchors_preset = -1
+anchor_left = 0.0882813
+anchor_top = 0.0319444
+anchor_right = 0.200781
+anchor_bottom = 0.108333
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Timer"]
+anchors_preset = -1
+anchor_left = 0.0882813
+anchor_top = 0.0375
+anchor_right = 0.200781
+anchor_bottom = 0.108333
+bbcode_enabled = true
+text = "[center][font_size=32][color=black]0:00[/color][/font_size][/center]"
+metadata/_edit_use_anchors_ = true
 
 [node name="DialoguePlayer" parent="." instance=ExtResource("5_bdhmt")]
 process_mode = 3
@@ -175,7 +225,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Door/Door/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(651, 720)
+size = Vector2i(2, 2)
 render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="Door/Door/SubViewportContainer/SubViewport"]
@@ -204,8 +254,9 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Controls"]
 layout_mode = 2
-offset_left = 50.0
-offset_right = 264.0
+offset_left = 1012.0
+offset_top = 350.0
+offset_right = 1226.0
 offset_bottom = 720.0
 grow_vertical = 2
 alignment = 1

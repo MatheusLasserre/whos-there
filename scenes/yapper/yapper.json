@@ -1,3 +1,52 @@
 {
-	"yap_test": {"color": "red", "alignment": "center", "font_size": 36, "text": ["This is a Test.", "And So is This."]}
+	"yap_test": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": [
+			"This is a Test.",
+			"And So is This."
+		],
+		"dialog_options": [
+			{
+				"option": "[center][color=black]Option 1",
+				"key": "yap_op1"
+			},
+			{
+				"option": "[center][color=black]Option 2",
+				"key": "yap_op2"
+			},
+			{
+				"option": "[center][color=black]Option 3",
+				"key": "yap_op3"
+			}
+		]
+	},
+	"yap_op1": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": [
+			"This is Option 1."
+		],
+		"dialog_options": []
+	},
+	"yap_op2": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": [
+			"This is Option 2."
+		],
+		"dialog_options": []
+	},
+	"yap_op3": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": [
+			"This is Option 3."
+		],
+		"dialog_options": []
+	}
 }
