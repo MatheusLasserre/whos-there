@@ -19,3 +19,6 @@ func set_state(state: GameState) -> void:
 	var scene: PackedScene = load(_states_scenes[state])
 	_current_scene_root = scene.instantiate()
 	add_child(_current_scene_root)
+	
+	if state == GameState.INGAME:
+		SignalBus.emit_signal("display_dialog", "yap_test")

@@ -5,6 +5,7 @@ extends Node
 var scene_text = {}
 var selected_text = []
 var dialog_options = []
+var next: String = ""
 var in_progress = false
 var is_typing = false
 
@@ -66,6 +67,9 @@ func process_text_data(data:Dictionary) -> Array:
 	var color = null
 	var font_size = null
 	var alignment = null
+	next = ""
+	dialog_options = []
+	
 	if data.has("color"):
 		color = data["color"]
 		
@@ -77,6 +81,8 @@ func process_text_data(data:Dictionary) -> Array:
 	
 	if data.has("dialog_options"):
 		dialog_options = data["dialog_options"]
+	elif data.has("next"):
+		next = data["next"]
 
 	var texts = data["text"].duplicate()
 	
@@ -104,12 +110,16 @@ func next_line():
 		finish()
 
 func finish() -> void:
-	text_label.text = ""
-	background.visible = false
 	in_progress = false
-	#get_tree().paused = false
 	if len(dialog_options) > 0:
 		show_options()
+	elif next != "":
+		on_display_dialog(next)
+		return
+	
+	text_label.text = ""
+	background.visible = false
+	#get_tree().paused = false
 
 func show_options() -> void:
 	if len(dialog_options) != 3:

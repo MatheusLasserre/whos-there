@@ -10,43 +10,30 @@
 		"dialog_options": [
 			{
 				"option": "[center][color=black]Option 1",
-				"key": "yap_op1"
+				"key": "yap_topic1"
 			},
 			{
 				"option": "[center][color=black]Option 2",
-				"key": "yap_op2"
+				"key": "yap_topic1"
 			},
 			{
 				"option": "[center][color=black]Option 3",
-				"key": "yap_op3"
+				"key": "yap_topic1"
 			}
 		]
 	},
-	"yap_op1": {
+	"yap_topic1": {
 		"color": "red",
 		"alignment": "center",
 		"font_size": 36,
-		"text": [
-			"This is Option 1."
-		],
-		"dialog_options": []
+		"text": ["Nice weather we're having..."],
+		"next": "yap_topic2"
 	},
-	"yap_op2": {
+	"yap_topic2": {
 		"color": "red",
 		"alignment": "center",
 		"font_size": 36,
-		"text": [
-			"This is Option 2."
-		],
-		"dialog_options": []
-	},
-	"yap_op3": {
-		"color": "red",
-		"alignment": "center",
-		"font_size": 36,
-		"text": [
-			"This is Option 3."
-		],
-		"dialog_options": []
+		"text": ["Did you catch the game last night?"],
+		"next": "yap_topic1"
 	}
 }
