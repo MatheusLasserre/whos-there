@@ -41,6 +41,7 @@ visible = false
 script = ExtResource("1_uytle")
 
 [node name="UI" type="CanvasLayer" parent="."]
+layer = 10
 visible = false
 
 [node name="Panel" type="Panel" parent="UI"]

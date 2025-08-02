@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bxp7xau32jb84"]
+[gd_scene load_steps=35 format=3 uid="uid://bxp7xau32jb84"]
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cckblo8ia6r60" path="res://MENUS_nd_UI/Insanity_Fill.png" id="10_otnwt"]
 [ext_resource type="Texture2D" uid="uid://cbvlxi4js64h0" path="res://MENUS_nd_UI/Health_Fill.png" id="11_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://dflq7y0j7fjmu" path="res://MENUS_nd_UI/Timer_Background.png" id="14_5v6r0"]
+[ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="19_10c2w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]
 
@@ -308,5 +309,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4j704")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kp23o")
 text = "Open Door
 "
+
+[node name="Pause" parent="." instance=ExtResource("19_10c2w")]
 
 [connection signal="value_changed" from="Sanity/SanityMeter" to="Larry" method="_on_sanity_meter_value_changed"]
