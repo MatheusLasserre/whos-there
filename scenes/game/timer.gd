@@ -7,7 +7,7 @@ extends CanvasLayer
 
 @export var time: float = 300.0;
 
-@export var sanity_rate: float = 0.01
+@export var sanity_rate: float = 0.005
 @export var health_rate: float = 1
 
 func _ready() -> void:

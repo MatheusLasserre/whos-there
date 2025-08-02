@@ -10,15 +10,15 @@
 		"dialog_options": [
 			{
 				"option": "[center][color=black]Option 1",
-				"key": "yap_topic1"
+				"key": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
 			},
 			{
 				"option": "[center][color=black]Option 2",
-				"key": "yap_topic1"
+				"key": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
 			},
 			{
 				"option": "[center][color=black]Option 3",
-				"key": "yap_topic1"
+				"key": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
 			}
 		]
 	},

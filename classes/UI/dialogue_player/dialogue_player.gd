@@ -11,12 +11,12 @@ var is_typing = false
 
 var _door_open = false
 
-@export var typing_speed = 0.1
+@export var typing_speed = 0.25
 var typing_counter = 0
 
 @export var start_key: String = "yap_test"
 
-@export var end_padding: int = 15
+@export var end_padding: int = 5
 
 @onready var background = $Background
 @onready var text_label = $TextLabel
@@ -40,7 +40,7 @@ func _process(delta) -> void:
 	if is_typing:
 		typing_counter += delta
 		if typing_counter >= typing_speed:
-			typing_counter = 0
+			typing_counter -= typing_speed
 			type_text()
 
 func type_text() -> void:
@@ -122,9 +122,11 @@ func process_text_data(data:Dictionary) -> Array:
 func show_text():
 	text_label.text = selected_text.pop_front()
 	is_typing = true
-	text_label.visible_characters = 0;
+	text_label.visible_characters = 0
 
 func next_line():
+	if not _door_open:
+		return
 	if selected_text.size() > 0:
 		show_text()
 	else:
@@ -192,4 +194,10 @@ func choose_option(number:int) -> void:
 		return
 	
 	var key = dialog_options[number-1]["key"]
-	on_display_dialog(key)
+	var san = larry.get_sanity()
+	if san >= 80:
+		on_display_dialog(key["Insane"])
+	elif san >= 40:
+		on_display_dialog(key["Half-Sane"])
+	else:
+		on_display_dialog(key["Sane"])

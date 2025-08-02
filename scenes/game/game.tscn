@@ -160,6 +160,7 @@ texture = ExtResource("7_uyinl")
 [node name="Foreground" type="CanvasLayer" parent="."]
 
 [node name="Foreground" type="Panel" parent="Foreground"]
+material = ExtResource("9_10c2w")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -236,6 +237,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DialoguePlayer" parent="." instance=ExtResource("5_bdhmt")]
 process_mode = 3
+scene_text_file = "res://scenes/yapper/monologue.json"
 
 [node name="Corruption" type="CanvasLayer" parent="."]
 
