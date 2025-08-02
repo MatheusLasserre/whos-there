@@ -8,7 +8,7 @@ color = Color(1, 1, 1, 1)
 thickness = 6
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_gqrk1"]
-color = Color(0.448691, 0.0685841, 0.599484, 1)
+color = Color(0.266667, 0.482353, 0.607843, 1)
 thickness = 6
 
 [node name="AudioController" type="Control"]
