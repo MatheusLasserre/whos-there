@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var sanity_meter: ProgressBar = $"../Sanity/SanityMeter"
+
 @onready var texture: TextureRect = $TextureRect
 @onready var crt_warp: CRTWarpLayer = $"../CRTWarp Layer"
 
@@ -26,7 +28,17 @@ func set_sanity(value:float)->void:
 	_set_sanity_meter()
 
 func _set_sanity_meter():
-	$"../Sanity/SanityMeter".value = 0.0 - _sanity
+	sanity_meter.value = 0.0 - _sanity
+	if _sanity <= 20:
+		sanity_meter.material.set_shader_parameter("amount", 0.0)
+	elif _sanity <= 40:
+		sanity_meter.material.set_shader_parameter("amount", 1.0)
+	elif _sanity <= 60:
+		sanity_meter.material.set_shader_parameter("amount", 5.0)
+	elif _sanity <= 80:
+		sanity_meter.material.set_shader_parameter("amount", 10.0)
+	else:
+		sanity_meter.material.set_shader_parameter("amount", 25.0)
 
 func _set_crt_warp():
 	if _sanity <= 20:
