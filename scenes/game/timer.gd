@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var text: RichTextLabel = $RichTextLabel
 
-var time: float;
+var time: float = 5 * 60;
 
 func _ready() -> void:
 	pass

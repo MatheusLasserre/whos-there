@@ -10,5 +10,5 @@ void fragment() {
 	float a = fract(sin(dot(SCREEN_UV, vec2(12.9898, 78.233) * TIME)) * 438.5453) * 1.9;
 	vec4 col = texture(SCREEN_TEXTURE, SCREEN_UV);
 	col.a *= pow(a, amount);
-	COLOR.a = col.a;
+	COLOR.a *= col.a;
 }

@@ -1,24 +1,19 @@
 extends CanvasLayer
 
-@onready var sanity_meter: ProgressBar = $"../Sanity/SanityMeter"
+@onready var sanity_meter: TextureProgressBar = $"../Sanity/SanityMeter"
 
-@onready var texture: TextureRect = $TextureRect
+@onready var texture: TextureRect = $Larry
 @onready var crt_warp: CRTWarpLayer = $"../CRTWarp Layer"
+@onready var corruption: TextureRect = $Corruption
 
-var sprites = {
-	20: [1,2,3,4,5,6],
-	40: [7,8,9,10,11],
-	60: [12,13,14,15,16,17,18],
-	80: [19,20,21,22,23,24],
-	100: [25,26,27,28,29,30,31,32,33,34]
-}
+var sprites = range(1, 35)
 var _sprite_index: int = 0
 
 var _sanity: float = 0.0;
 
 func _ready() -> void:
 	SignalBus.larry_animate.connect(animate_larry)
-	_set_sanity_meter()
+	set_sanity(20.0)
 
 func get_sanity()->float:
 	return _sanity
@@ -26,68 +21,62 @@ func get_sanity()->float:
 func set_sanity(value:float)->void:
 	_sanity = value
 	_set_sanity_meter()
+	_set_crt_warp()
+	_set_corruption_sprite()
 
 func _set_sanity_meter():
-	sanity_meter.value = 0.0 - _sanity
-	if _sanity <= 20:
+	sanity_meter.value = _sanity
+	if _sanity < 20:
 		sanity_meter.material.set_shader_parameter("amount", 0.0)
-	elif _sanity <= 40:
+	elif _sanity < 40:
 		sanity_meter.material.set_shader_parameter("amount", 1.0)
-	elif _sanity <= 60:
+	elif _sanity < 60:
 		sanity_meter.material.set_shader_parameter("amount", 5.0)
-	elif _sanity <= 80:
+	elif _sanity < 80:
 		sanity_meter.material.set_shader_parameter("amount", 10.0)
 	else:
 		sanity_meter.material.set_shader_parameter("amount", 25.0)
 
 func _set_crt_warp():
-	if _sanity <= 20:
+	if _sanity < 20:
 		crt_warp.set_wiggle_strength(0)
-	elif _sanity <= 40:
+	elif _sanity < 40:
 		crt_warp.set_wiggle_strength(0.005)
-	elif _sanity <= 60:
+	elif _sanity < 60:
 		crt_warp.set_wiggle_strength(0.01)
-	elif _sanity <= 80:
+	elif _sanity < 80:
 		crt_warp.set_wiggle_strength(0.025)
 	else:
 		crt_warp.set_wiggle_strength(0.5)
 
+func _set_corruption_sprite():
+	if _sanity < 20:
+		corruption.visible = false
+	elif _sanity < 40:
+		corruption.visible = true
+		corruption.texture = load("res://CORRUPTION/corruption_1.png")
+	elif _sanity < 60:
+		corruption.visible = true
+		corruption.texture = load("res://CORRUPTION/corruption_2.png")
+	elif _sanity < 80:
+		corruption.visible = true
+		corruption.texture = load("res://CORRUPTION/corruption_3.png")
+	else:
+		corruption.visible = true
+		corruption.texture = load("res://CORRUPTION/corruption_4.png")
+
 func animate_larry() -> void:
-	if _sanity <= 20:
-		if _sprite_index >= len(sprites[20]):
-			_sprite_index = 0
-		texture.texture = load_larry(sprites[20][_sprite_index])
-		_sprite_index += 1
-		return
+	if _sprite_index >= len(sprites):
+		_sprite_index = 0
+	texture.texture = load_larry(sprites[_sprite_index])
+	_sprite_index += 1
 	
-	if _sanity <= 40:
-		if _sprite_index >= len(sprites[40]):
-			_sprite_index = 0
-		texture.texture = load_larry(sprites[40][_sprite_index])
-		_sprite_index += 1
-		return
-	
-	if _sanity <= 60:
-		if _sprite_index >= len(sprites[60]):
-			_sprite_index = 0
-		texture.texture = load_larry(sprites[60][_sprite_index])
-		_sprite_index += 1
-		return
-	
-	if _sanity <= 80:
-		if _sprite_index >= len(sprites[80]):
-			_sprite_index = 0
-		texture.texture = load_larry(sprites[80][_sprite_index])
-		_sprite_index += 1
-		return
-	
-	if _sanity <= 100:
-		if _sprite_index >= len(sprites[100]):
-			_sprite_index = 0
-		texture.texture = load_larry(sprites[100][_sprite_index])
-		_sprite_index += 1
-		return
+	_set_corruption_sprite()
 
 func load_larry(sprite_number):
 	var sprite = "res://LARRY/LARRY1.png".replace("1", str(sprite_number))
 	return load(sprite)
+
+
+func _on_sanity_meter_value_changed(value: float) -> void:
+	set_sanity(value)

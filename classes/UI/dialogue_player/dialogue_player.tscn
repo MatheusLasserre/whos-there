@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnywaxicq8l84"]
+[gd_scene load_steps=6 format=3 uid="uid://cnywaxicq8l84"]
 
 [ext_resource type="Script" uid="uid://cvnhlqm2qn62d" path="res://classes/UI/dialogue_player/dialogue_player.gd" id="1_dv1er"]
+[ext_resource type="Texture2D" uid="uid://c76ci8mtmagls" path="res://MENUS_nd_UI/Yap_Box.png" id="2_bkh83"]
 [ext_resource type="Shader" uid="uid://cnhcg5mg5jefb" path="res://assets/shaders/simple_blur.gdshader" id="2_dai85"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dai85"]
@@ -13,28 +14,31 @@ shader_parameter/blur_amount = 0.5
 script = ExtResource("1_dv1er")
 scene_text_file = "res://scenes/yapper/yapper.json"
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
 anchors_preset = -1
 anchor_left = 0.248437
 anchor_top = 0.686111
 anchor_right = 0.753906
 anchor_bottom = 1.0
+offset_right = 6.10352e-05
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.209938, 1, 0.95323, 1)
+texture = ExtResource("2_bkh83")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextLabel" type="RichTextLabel" parent="."]
 material = SubResource("ShaderMaterial_dai85")
 anchors_preset = -1
-anchor_left = 0.249219
-anchor_top = 0.6875
-anchor_right = 0.753906
-anchor_bottom = 1.0
+anchor_left = 0.258594
+anchor_top = 0.715278
+anchor_right = 0.736719
+anchor_bottom = 0.977778
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 bbcode_enabled = true
+text = "[center][color=red][font_size=36]Nice weather we're having..."
 metadata/_edit_use_anchors_ = true
 
 [node name="Blur" type="ColorRect" parent="."]

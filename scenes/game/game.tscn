@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bxp7xau32jb84"]
+[gd_scene load_steps=34 format=3 uid="uid://bxp7xau32jb84"]
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
@@ -11,7 +11,13 @@
 [ext_resource type="Script" uid="uid://d1rp4qsndbb6u" path="res://scenes/game/timer.gd" id="6_2a8rs"]
 [ext_resource type="Shader" uid="uid://bwvvyvjuny2bu" path="res://assets/shaders/crt_blur.gdshader" id="6_5i0tg"]
 [ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="6_bdhmt"]
+[ext_resource type="Texture2D" uid="uid://dt88jnsjno457" path="res://CORRUPTION/corruption_1.png" id="7_uyinl"]
 [ext_resource type="Shader" uid="uid://dqfq7dd131s55" path="res://assets/shaders/static.gdshader" id="8_5jirj"]
+[ext_resource type="Texture2D" uid="uid://ynb66icovuxv" path="res://MENUS_nd_UI/Insanity_Under.png" id="9_ftsea"]
+[ext_resource type="Texture2D" uid="uid://cwq6f7ujd1aqp" path="res://MENUS_nd_UI/Health_Over.png" id="10_3xj4h"]
+[ext_resource type="Texture2D" uid="uid://cckblo8ia6r60" path="res://MENUS_nd_UI/Insanity_Fill.png" id="10_otnwt"]
+[ext_resource type="Texture2D" uid="uid://cbvlxi4js64h0" path="res://MENUS_nd_UI/Health_Fill.png" id="11_5v6r0"]
+[ext_resource type="Texture2D" uid="uid://dflq7y0j7fjmu" path="res://MENUS_nd_UI/Timer_Background.png" id="14_5v6r0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]
 
@@ -28,7 +34,7 @@ shader_parameter/bloomAmount = 0.0625
 shader_parameter/warp = Vector2(0.015625, 0.0416667)
 shader_parameter/maskDark = 0.5
 shader_parameter/maskLight = 10.0
-shader_parameter/wiggleMult = 0.005
+shader_parameter/wiggleMult = 0.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdhmt"]
 texture = ExtResource("2_kelw5")
@@ -56,10 +62,6 @@ bg_color = Color(0.466667, 0.713726, 0, 1)
 [sub_resource type="Theme" id="Theme_vaxfo"]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_87uf6")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_5jirj")
-
-[sub_resource type="GDScript" id="GDScript_2a8rs"]
-script/source = "extends ProgressBar
-"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87uf6"]
 
@@ -136,15 +138,27 @@ grow_vertical = 2
 [node name="Larry" type="CanvasLayer" parent="."]
 script = ExtResource("5_kp23o")
 
-[node name="TextureRect" type="TextureRect" parent="Larry"]
+[node name="Larry" type="TextureRect" parent="Larry"]
 anchors_preset = -1
-anchor_left = 0.367188
-anchor_top = 0.0777778
-anchor_right = 0.670313
-anchor_bottom = 0.684722
-offset_bottom = -3.05176e-05
+anchor_left = 0.366406
+anchor_top = 0.108333
+anchor_right = 0.669531
+anchor_bottom = 0.715277
 texture = ExtResource("4_87uf6")
 metadata/_edit_use_anchors_ = true
+
+[node name="Corruption" type="TextureRect" parent="Larry"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 469.0
+offset_top = 78.0
+offset_right = -423.0
+offset_bottom = -205.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_uyinl")
 
 [node name="Foreground" type="CanvasLayer" parent="."]
 
@@ -158,60 +172,73 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_bdhmt")
 
 [node name="Sanity" type="CanvasLayer" parent="."]
 
-[node name="SanityMeter" type="ProgressBar" parent="Sanity"]
+[node name="SanityMeter" type="TextureProgressBar" parent="Sanity"]
+texture_filter = 1
 material = SubResource("ShaderMaterial_5jirj")
 anchors_preset = -1
-anchor_left = 0.0140625
-anchor_top = 0.0194444
-anchor_right = 0.046875
-anchor_bottom = 0.977778
+anchor_left = 0.0210938
+anchor_top = 0.0986111
+anchor_right = 0.117969
+anchor_bottom = 0.981944
+offset_right = -93.0
+offset_bottom = -477.0
+scale = Vector2(4, 4)
 theme = SubResource("Theme_87uf6")
+value = 25.0
 fill_mode = 3
-show_percentage = false
+texture_under = ExtResource("9_ftsea")
+texture_progress = ExtResource("10_otnwt")
 metadata/_edit_use_anchors_ = true
 
 [node name="Health" type="CanvasLayer" parent="."]
 
-[node name="HealthMeter" type="ProgressBar" parent="Health"]
+[node name="HealthMeter" type="TextureProgressBar" parent="Health"]
 anchors_preset = -1
-anchor_left = 0.0140625
-anchor_top = 0.609722
-anchor_right = 0.046875
-anchor_bottom = 0.977778
-offset_left = 64.0
-offset_top = 0.999999
-offset_right = 64.0
-offset_bottom = 1.0
+anchor_left = 0.138281
+anchor_top = 0.388889
+anchor_right = 0.213281
+anchor_bottom = 0.988889
+offset_right = -64.0
+offset_bottom = -288.0
+scale = Vector2(3, 3)
 theme = SubResource("Theme_vaxfo")
 value = 25.0
 fill_mode = 3
-show_percentage = false
-script = SubResource("GDScript_2a8rs")
+nine_patch_stretch = true
+texture_over = ExtResource("10_3xj4h")
+texture_progress = ExtResource("11_5v6r0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="CanvasLayer" parent="."]
 script = ExtResource("6_2a8rs")
 
-[node name="ColorRect" type="ColorRect" parent="Timer"]
+[node name="ColorRect" type="TextureRect" parent="Timer"]
 anchors_preset = -1
 anchor_left = 0.0882813
 anchor_top = 0.0319444
 anchor_right = 0.200781
 anchor_bottom = 0.108333
+texture = ExtResource("14_5v6r0")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Timer"]
 anchors_preset = -1
 anchor_left = 0.0882813
-anchor_top = 0.0375
+anchor_top = 0.0416667
 anchor_right = 0.200781
 anchor_bottom = 0.108333
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
 bbcode_enabled = true
 text = "[center][font_size=32][color=black]0:00[/color][/font_size][/center]"
 metadata/_edit_use_anchors_ = true
 
 [node name="DialoguePlayer" parent="." instance=ExtResource("5_bdhmt")]
 process_mode = 3
+
+[node name="Corruption" type="CanvasLayer" parent="."]
 
 [node name="Door" type="CanvasLayer" parent="."]
 visible = false
@@ -249,6 +276,7 @@ transform = Transform3D(0.855, 0, 0, 0, -3.73732e-08, 0.855, 0, -0.855, -3.73732
 texture = ExtResource("3_lfrn8")
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Controls" type="Control" parent="UI"]
 layout_mode = 3
@@ -283,3 +311,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4j704")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kp23o")
 text = "Open Door
 "
+
+[connection signal="value_changed" from="Sanity/SanityMeter" to="Larry" method="_on_sanity_meter_value_changed"]

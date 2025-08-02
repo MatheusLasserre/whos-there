@@ -41,6 +41,7 @@ func type_text() -> void:
 		SignalBus.emit_signal("larry_animate")
 	else:
 		is_typing = false
+		
 
 func finish_typing() -> void:
 	text_label.visible_characters = -1
