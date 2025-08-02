@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://cof30lnfmenqo"]
+
+[ext_resource type="Script" uid="uid://eil5q02fqs63" path="res://scenes/pause/pause.gd" id="1_uytle"]
+[ext_resource type="Texture2D" uid="uid://68trdmffeq2a" path="res://MENUS_nd_UI/PAUSE_MENU.png" id="2_irh77"]
+[ext_resource type="Theme" uid="uid://k0g0my122iix" path="res://themes/theme.tres" id="3_k0rk1"]
+[ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="4_hto4h"]
+[ext_resource type="PackedScene" uid="uid://bnbe3itcn5kp1" path="res://scenes/settings/settings.tscn" id="5_pybvq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gvl4x"]
+texture = ExtResource("2_irh77")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6k1aa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7450"]
+bg_color = Color(0.391743, 0.901878, 0.92082, 0.141176)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqfqf"]
+bg_color = Color(0.256753, 0.551658, 1, 0.372549)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dokwo"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Pause" type="Node2D"]
+process_mode = 3
+visible = false
+script = ExtResource("1_uytle")
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gvl4x")
+
+[node name="resume" type="Button" parent="UI"]
+offset_left = 524.0
+offset_top = 191.0
+offset_right = 764.0
+offset_bottom = 260.0
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_k0rk1")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hto4h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6k1aa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r7450")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eqfqf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dokwo")
+
+[node name="Settings2" type="Button" parent="UI"]
+offset_left = 540.0
+offset_top = 276.0
+offset_right = 745.0
+offset_bottom = 344.0
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6k1aa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r7450")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eqfqf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dokwo")
+
+[node name="Quit" type="Button" parent="UI"]
+offset_left = 553.0
+offset_top = 364.0
+offset_right = 729.0
+offset_bottom = 432.0
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hto4h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6k1aa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r7450")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eqfqf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dokwo")
+
+[node name="Settings" parent="UI" instance=ExtResource("5_pybvq")]
+visible = false
