@@ -242,6 +242,7 @@ process_mode = 3
 [node name="Corruption" type="CanvasLayer" parent="."]
 
 [node name="Door" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Door" type="AspectRatioContainer" parent="Door"]
 anchors_preset = 15
@@ -249,17 +250,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 ratio = 0.905
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Door/Door"]
 layout_mode = 2
+mouse_filter = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Door/Door/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(651, 720)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="Door/Door/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)

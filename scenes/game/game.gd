@@ -14,12 +14,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	update_door(delta)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func toggle_door() -> void:
 	is_door_open = !is_door_open
 	open_door_button.text = "Close Door" if is_door_open else "Open Door"
+	SignalBus.emit_signal("toggle_door", is_door_open)
 
 func update_door(delta: float) -> void:
 	var target_rotation = door_open_degrees if is_door_open else door_closed_degrees

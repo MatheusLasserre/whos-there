@@ -5,16 +5,22 @@ extends Node
 var scene_text = {}
 var selected_text = []
 var dialog_options = []
-var next: String = ""
+var next: Dictionary = {}
 var in_progress = false
 var is_typing = false
 
 @export var typing_speed = 0.25
 var typing_counter = 0
 
+@export var start_key: String = "yap_test"
+
+@export var end_padding: int = 15
+
 @onready var background = $Background
 @onready var text_label = $TextLabel
 @onready var blur = $Blur
+
+@onready var larry: Larry = $"../Larry"
 
 @onready var options: VBoxContainer = $Options
 
@@ -26,6 +32,7 @@ func _ready() -> void:
 	#background.visible = false
 	scene_text = load_scene_text()
 	SignalBus.display_dialog.connect(on_display_dialog)
+	SignalBus.toggle_door.connect(_on_door_toggled)
 
 func _process(delta) -> void:
 	if is_typing:
@@ -36,12 +43,12 @@ func _process(delta) -> void:
 
 func type_text() -> void:
 	var count = text_label.get_total_character_count()
-	if text_label.visible_characters < count:
+	if text_label.visible_characters < count + end_padding:
 		text_label.visible_characters += 1
 		SignalBus.emit_signal("larry_animate")
 	else:
 		is_typing = false
-		
+		next_line()
 
 func finish_typing() -> void:
 	text_label.visible_characters = -1
@@ -50,6 +57,12 @@ func finish_typing() -> void:
 func load_scene_text():
 	var json_as_text = FileAccess.get_file_as_string(scene_text_file)
 	return JSON.parse_string(json_as_text)
+
+func _on_door_toggled(toggle:bool)->void:
+	if !toggle:
+		end()
+	else:
+		on_display_dialog(start_key)
 
 func on_display_dialog(text_key):
 	if in_progress and not is_typing:
@@ -68,7 +81,7 @@ func process_text_data(data:Dictionary) -> Array:
 	var color = null
 	var font_size = null
 	var alignment = null
-	next = ""
+	next = {}
 	dialog_options = []
 	
 	if data.has("color"):
@@ -110,12 +123,24 @@ func next_line():
 	else:
 		finish()
 
+func end() -> void:
+	in_progress = false
+	text_label.text = ""
+	background.visible = false
+
 func finish() -> void:
 	in_progress = false
 	if len(dialog_options) > 0:
 		show_options()
-	elif next != "":
-		on_display_dialog(next)
+	elif len(next) != 0:
+		var san = larry.get_sanity()
+		if san >= 80:
+			on_display_dialog(next["80"])
+		elif san >= 40:
+			on_display_dialog(next["40"])
+		else:
+			on_display_dialog(next["0"])
+		
 		return
 	
 	text_label.text = ""
@@ -137,7 +162,8 @@ func set_blur(value:float):
 func _on_background_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			on_display_dialog("yap_test")
+			pass
+			#on_display_dialog(start_key)
 
 func _on_option_1_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

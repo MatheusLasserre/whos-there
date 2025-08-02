@@ -12,6 +12,17 @@ var _states_scenes: Dictionary[GameState, String] = {
 
 var _current_scene_root: Node
 
+func _ready() -> void:
+	SignalBus.timer_end.connect(_win)
+	SignalBus.health_depleted.connect(_lose)
+	SignalBus.sanity_maxed.connect(_lose)
+
+func _win()->void:
+	print("You Win!")
+
+func _lose()->void:
+	print("You Lost")
+
 func set_state(state: GameState) -> void:
 	if _current_scene_root != null:
 		_current_scene_root.queue_free()

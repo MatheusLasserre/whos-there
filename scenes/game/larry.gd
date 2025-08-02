@@ -1,6 +1,8 @@
+class_name Larry
 extends CanvasLayer
 
 @onready var sanity_meter: TextureProgressBar = $"../Sanity/SanityMeter"
+@onready var health_meter: TextureProgressBar = $"../Health/HealthMeter"
 
 @onready var texture: TextureRect = $Larry
 @onready var crt_warp: CRTWarpLayer = $"../CRTWarp Layer"
@@ -10,10 +12,12 @@ var sprites = range(1, 35)
 var _sprite_index: int = 0
 
 var _sanity: float = 0.0;
+var _health: float = 100.0;
 
 func _ready() -> void:
 	SignalBus.larry_animate.connect(animate_larry)
-	set_sanity(20.0)
+	set_sanity(_sanity)
+	set_health(_health)
 
 func get_sanity()->float:
 	return _sanity
@@ -23,6 +27,20 @@ func set_sanity(value:float)->void:
 	_set_sanity_meter()
 	_set_crt_warp()
 	_set_corruption_sprite()
+	if _sanity >= 100.0:
+		SignalBus.emit_signal("sanity_maxed")
+
+func get_health()->float:
+	return _health
+
+func set_health(value:float)->void:
+	_health = value
+	_set_health_meter()
+	if _health <= 0:
+		SignalBus.emit_signal("health_depleted")
+
+func _set_health_meter():
+	health_meter.value = _health
 
 func _set_sanity_meter():
 	sanity_meter.value = _sanity
