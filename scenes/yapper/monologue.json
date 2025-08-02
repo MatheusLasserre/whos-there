@@ -1,0 +1,39 @@
+{
+	"yap_test": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": [
+			"This is a Test.",
+			"And So is This."
+		],
+		"dialog_options": [
+			{
+				"option": "[center][color=black]Option 1",
+				"key": "yap_topic1"
+			},
+			{
+				"option": "[center][color=black]Option 2",
+				"key": "yap_topic1"
+			},
+			{
+				"option": "[center][color=black]Option 3",
+				"key": "yap_topic1"
+			}
+		]
+	},
+	"sane_topic1": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Boy, this weather, huh?", "Always something going on out there, I’ll tell ya.", "Boy is it frightful out, though.", "Me personally, I wouldn’t want to step outside.","No sir-ee.","But rain is good for us, you know?","We human-folk, water is good for us.","For the soul.","I was watching this documentary the other day, about – It’s on poubi.","Do you have poubi?","It’s on poubi.","– But I saw this documentary, and it’s about… ah, I wouldn’t wanna spoil it for you.","You should watch it yourself."],
+		"next": {"Sane": "sane_topic2", "Half-Sane": "halfsane_topic2", "Insane": "insane_topic2"}
+	},
+	"sane_topic2":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["But boy, these streaming services, huh?","Always trying to nickel and dime you, I’ll tell ya.","Although, I suppose “nickel and dime” isn’t the right phrase anymore, huh?","Everyone paying for things with their phones and whatnot.","What do you know about all this Cryptocurrency noise?","I’ll admit I was suspicious at first, but my brother in law, he’s quite the fanatic.","He’s a… what do you call them?","A Crypto… a CryptoBro!","That’s what it is.","A CryptoBro.","That’s what they call them, you know?","CryptoBros."],
+		"next": {"Sane": "sane_topic3", "Half-Sane": "halfsane_topic3", "Insane": "insane_topic3"}
+	}
+}

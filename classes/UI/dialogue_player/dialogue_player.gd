@@ -9,7 +9,9 @@ var next: Dictionary = {}
 var in_progress = false
 var is_typing = false
 
-@export var typing_speed = 0.25
+var _door_open = false
+
+@export var typing_speed = 0.1
 var typing_counter = 0
 
 @export var start_key: String = "yap_test"
@@ -59,12 +61,17 @@ func load_scene_text():
 	return JSON.parse_string(json_as_text)
 
 func _on_door_toggled(toggle:bool)->void:
-	if !toggle:
+	_door_open = toggle
+	if not _door_open:
 		end()
 	else:
 		on_display_dialog(start_key)
 
 func on_display_dialog(text_key):
+	if not _door_open:
+		end()
+		return
+	
 	if in_progress and not is_typing:
 		next_line()
 	elif not is_typing:
@@ -135,11 +142,11 @@ func finish() -> void:
 	elif len(next) != 0:
 		var san = larry.get_sanity()
 		if san >= 80:
-			on_display_dialog(next["80"])
+			on_display_dialog(next["Insane"])
 		elif san >= 40:
-			on_display_dialog(next["40"])
+			on_display_dialog(next["Half-Sane"])
 		else:
-			on_display_dialog(next["0"])
+			on_display_dialog(next["Sane"])
 		
 		return
 	

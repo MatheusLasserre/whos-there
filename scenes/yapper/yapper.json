@@ -27,27 +27,27 @@
 		"alignment": "center",
 		"font_size": 36,
 		"text": ["Nice weather we're having..."],
-		"next": {"0": "yap_topic2", "40": "yap_topic3", "80": "yap_topic4"}
+		"next": {"Sane": "yap_topic2", "Half-Sane": "yap_topic3", "Insane": "yap_topic4"}
 	},
 	"yap_topic2": {
 		"color": "red",
 		"alignment": "center",
 		"font_size": 36,
 		"text": ["Did you catch the game last night?"],
-		"next": {"0": "yap_topic1", "40": "yap_topic3", "80": "yap_topic4"}
+		"next": {"Sane": "yap_topic1", "Half-Sane": "yap_topic3", "Insane": "yap_topic4"}
 	},
 	"yap_topic3": {
 		"color": "red",
 		"alignment": "center",
 		"font_size": 36,
 		"text": ["Sure is crazy how..."],
-		"next": {"0": "yap_topic2", "40": "yap_topic1", "80": "yap_topic4"}
+		"next": {"Sane": "yap_topic2", "Half-Sane": "yap_topic1", "Insane": "yap_topic4"}
 	},
 	"yap_topic4": {
 		"color": "red",
 		"alignment": "center",
 		"font_size": 36,
 		"text": ["I wish that I could..."],
-		"next": {"0": "yap_topic2", "40": "yap_topic3", "80": "yap_topic1"}
+		"next": {"Sane": "yap_topic2", "Half-Sane": "yap_topic3", "Insane": "yap_topic1"}
 	}
 }
