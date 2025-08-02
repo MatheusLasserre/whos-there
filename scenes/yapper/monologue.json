@@ -78,11 +78,153 @@
 		"text": ["But boy, this weather, huh? …"],
 		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic9"}
 	},
+	
 	"halfsane_topic1":{
 		"color": "red",
 		"alignment": "center",
 		"font_size": 36,
-		"text": [],
+		"text": ["Too many people in this world.","We are like bugs.","Ants.","Small and squishy and simple and stupid ants.","You could simply take a handful, crush them, watch a dozen fires go out, and you would feel nothing.","For thou would know that they are so replaceable that there would be no one to care if they disappeared.","No one but thee.","Easy, as long as you do not lend an ounce of thought to care."],
 		"next": {"Sane": "sane_topic2", "Half-Sane": "halfsane_topic2", "Insane": "insane_topic2"}
 	},
+	"halfsane_topic2":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Are ye aware that it takes the same amount of force to bite off a finger as it does to bite into the average carrot?","Nothing more than a tiny flex of the jaw, and you have laid harm upon thy fellow man.","No schoolyard bruise, either – Real, true, harm.","For if that was the finger of an artist, how will they draw?","If that was the finger of a surgeon, how will they perform?","Or if that was the finger of any one of the menial men that walk about this world with the sole purpose of sitting in front of some monitor to type their lives away?","You have ruined a life, a fragile life, with the same force it would take you or I to eat dinner."],
+		"next": {"Sane": "sane_topic3", "Half-Sane": "halfsane_topic3", "Insane": "insane_topic3"}
+	},
+	"halfsane_topic3":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["One must then operate with the understanding that the physical exertion is not what makes the task of removing the finger of their fellow man a difficult one.","It is then a problem of our own wiring getting the better of us.","Therein lies the rub.","The armor you do not see around the fingers, arms, necks, hearts of every man you pass on the street.","The armor you cannot see, for unlike that of steel, it is invisible.","Every day, people walking around in their suits of invisible arms, all along the morrow.","Feeling safe.","But the problem with this is, of course, invisible armor is not as impenetrable as man may think.","For if you can bypass the tiny wiring in our brains that assure us it is there, then all of a sudden, it is not.","All of a sudden, these ants are walking around naked, but under the guise of security.","Going about their daily trappings, subscribed to a world they hate because they are under the belief that nothing better is out there.","They are under the belief that “at least they’re safe.”"],
+		"next": {"Sane": "sane_topic4", "Half-Sane": "halfsane_topic4", "Insane": "insane_topic4"}
+	},
+	"halfsane_topic4":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["But every day the colony grows.","More and more it becomes a little bit harder to believe that each and every one of them is a real human being, and just a little bit easier to see the flaws in their invisible armor.","Until one blessed day, the truth arrives upon you, and the deceitful mirage disappears."],
+		"next": {"Sane": "sane_topic5", "Half-Sane": "halfsane_topic5", "Insane": "insane_topic5"}
+	},
+	"halfsane_topic5":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["On that day, all you see are ants.","Too many ants."],
+		"next": {"Sane": "sane_topic6", "Half-Sane": "halfsane_topic6", "Insane": "insane_topic6"}
+	},
+	"halfsane_topic6":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Too many people in this world…"],
+		"next": {"Sane": "sane_topic7", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic7"}
+	},
+	
+	"insane_topic1":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["…"],
+		"next": {"Sane": "sane_topic2", "Half-Sane": "halfsane_topic2", "Insane": "insane_topic2"}
+	},
+	"insane_topic2":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Child."],
+		"next": {"Sane": "sane_topic3", "Half-Sane": "halfsane_topic3", "Insane": "insane_topic3"}
+	},
+	"insane_topic3":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["They are not coming back.","They are gone."],
+		"next": {"Sane": "sane_topic4", "Half-Sane": "halfsane_topic4", "Insane": "insane_topic4"}
+	},
+	"insane_topic4":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["I will tell ye again.","They are gone."],
+		"next": {"Sane": "sane_topic5", "Half-Sane": "halfsane_topic5", "Insane": "insane_topic5"}
+	},
+	"insane_topic5":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["My Millie.","Your parents.","Gone."],
+		"next": {"Sane": "sane_topic6", "Half-Sane": "halfsane_topic6", "Insane": "insane_topic6"}
+	},
+	"insane_topic6":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["…"],
+		"next": {"Sane": "sane_topic7", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic7"}
+	},
+	"insane_topic7":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["Thou would not understand, even if I decreed the truth upon thee.","In truth, my child, not even I know the full scope of the bargain I made.","In truth, my child, I had it swear not to tell me.","It was not my intention to know what I had done, only to do what I knew must be done."],
+		"next": {"Sane": "sane_topic8", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic8"}
+	},
+	"insane_topic8":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["But here stands thee.","Not part of that deal.","I used very clear language with it.","All.","All includes thee.","All includes all.","So wherefore do you stand in front of me, a breathing contradiction?","A filthy child of filthy spawn stands here while my own Millie is gone.","My beautiful, shining, smart, royal Millie is gone.","Divinity of hell, why send your tricks upon me?"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic9"}
+	},
+	"insane_topic9":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["It is unseemly.","It is unnsensical.","It is unrighteous, undivine, un…"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic10"}
+	},
+	"insane_topic10":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["It’s unfair."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic11"}
+	},
+	"insane_topic11":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["I had made peace with the deal including Millie.","Beautiful, shining, smart, royal Millie.","Millie, and Sheila, and brother in law, and Football Team and Department of Transportation.","Thee and thou and thy and all in between.","It swore.","Everyone.","Yet here stands thee."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic12"}
+	},
+	"insane_topic12":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["Worst of all, you don’t even make good conversation.","You just stand there.","Waiting for your parents to come back or something."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic13"}
+	},
+	"insane_topic13":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["…"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic14"}
+	},
+	"insane_topic14":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["Child."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic15"}
+	},
+	"insane_topic15":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 38,
+		"text": ["They are not coming back."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	}
 }
