@@ -26,6 +26,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://ct4a5im2dde0j"
+mouse_cursor/custom_image_hotspot=Vector2(0, 20)
 
 [input]
 
