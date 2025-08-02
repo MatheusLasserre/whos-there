@@ -1,3 +1,4 @@
+class_name Game
 extends Node2D
 
 @export var open_door_button: Button

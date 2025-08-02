@@ -241,7 +241,6 @@ process_mode = 3
 [node name="Corruption" type="CanvasLayer" parent="."]
 
 [node name="Door" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Door" type="AspectRatioContainer" parent="Door"]
 anchors_preset = 15
@@ -258,8 +257,8 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Door/Door/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
-render_target_update_mode = 0
+size = Vector2i(651, 720)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Door/Door/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
@@ -276,7 +275,6 @@ transform = Transform3D(0.855, 0, 0, 0, -3.73732e-08, 0.855, 0, -0.855, -3.73732
 texture = ExtResource("3_lfrn8")
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Controls" type="Control" parent="UI"]
 layout_mode = 3
@@ -299,7 +297,6 @@ alignment = 1
 [node name="Open Door" type="Button" parent="UI/Controls/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
