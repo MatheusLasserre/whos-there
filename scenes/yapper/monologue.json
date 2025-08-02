@@ -35,5 +35,54 @@
 		"font_size": 36,
 		"text": ["But boy, these streaming services, huh?","Always trying to nickel and dime you, I’ll tell ya.","Although, I suppose “nickel and dime” isn’t the right phrase anymore, huh?","Everyone paying for things with their phones and whatnot.","What do you know about all this Cryptocurrency noise?","I’ll admit I was suspicious at first, but my brother in law, he’s quite the fanatic.","He’s a… what do you call them?","A Crypto… a CryptoBro!","That’s what it is.","A CryptoBro.","That’s what they call them, you know?","CryptoBros."],
 		"next": {"Sane": "sane_topic3", "Half-Sane": "halfsane_topic3", "Insane": "insane_topic3"}
-	}
+	},
+	"sane_topic3":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Boy, these kids and their slang, huh?","Always coming up with some something for something, I’ll tell ya.","I have a kid living under my own roof and I still can’t understand half the things she says.","Of course, little Millie’s going off to college now, pretty soon.","Utah University!","It was a tough choice between Utah University and University of Utah, but ultimately we decided UU has a better atmosphere than UofU.","So, go Seagulls!","That’s their mascot.","State animal of Utah, you know?","Of course, the real name for Seagulls are “California Gulls,” which means the state animal of Utah is named after a different state.","Strange stuff."],
+		"next": {"Sane": "sane_topic4", "Half-Sane": "halfsane_topic4", "Insane": "insane_topic4"}
+	},
+	"sane_topic4":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Boy, California, huh?","Beautiful place, I’ll tell ya’.","You ever been?","You gotta go.","It’s amazing this time of year.","Great beaches.","Great sights.","Great food.","Of course, not all the people are that great!","Nah, I’m just joshin’ with you.","I took a trip out there last summer – of course, it was for business, but that doesn’t mean it wasn’t a vacation.","The whole time I was out there, I was just thinking how lucky I was, just being in the city of stars!","Movie magic, right there in LA!","I could feel it in the air.","Of course, I was actually a few hours down, in San Diego, but I managed to squeeze in a drive to LA.","Even just an hour in LA’s better than nothing."],
+		"next": {"Sane": "sane_topic5", "Half-Sane": "halfsane_topic5", "Insane": "insane_topic5"}
+	},
+	"sane_topic5":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["But boy, gas prices, huh?","Liquid gold, I’ll tell ya’.","I mean I remember a day when gas was a dollar a gallon.","‘Course, back in those days, there weren’t too many cars on the road in the first place.","I always said there were too many people in this world.","Not to mention that pothole down on 53rd street?","I’ve been trying to put a complaint in with the department of transportation for weeks now, but I’ve gotten absolutely nothing from them.","Makes a citizen feel the only way to get something done is to do it themselves.","But I’m not much of a man for politics myself.","I don’t do too well with news channels.","I’d rather just watch whatever game is on, and stick to my own problems, thank you very much."],
+		"next": {"Sane": "sane_topic6", "Half-Sane": "halfsane_topic6", "Insane": "insane_topic6"}
+	},
+	"sane_topic6":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Boy, that game last night, huh?","What a doozy, I’ll tell ya’.","Did you catch it?","I was on the edge of my seat the whole time!","And that foul?","I mean I’m always rooting for our boys, but I think they made the right call on that one – he clearly deserved that penalty.","I think it made for a better game, anyway, especially considering that nail-biter of an OT.","I don’t think I’ve seen a game that tense in…","well, it’s been a while, I’ll tell you that.","I just got this new recliner, too.","Whoo, baby, it’s like sitting on a cloud.","I was skeptical about taking the plunge – not as skeptical as Sheila, of course, but pretty skeptical – but man was it worth it in the end."],
+		"next": {"Sane": "sane_topic7", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic7"}
+	},
+	"sane_topic7":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["Boy, the missus, huh?","Can’t live with her, can’t live without her, I’ll tell ya’.","Seems that every day is another new problem.","The TV’s too loud and she can’t hear anything, or I’m too loud and she can’t hear the TV.","I’m too messy in the kitchen, or I’m not helping out in the kitchen enough.","But that’s just marriage, y’know?","Happy wife, happy life.","The other day – get this – the other day, she comes home, sopping wet from the rain, and she starts yelling at me, like somehow it’s my fault.","Like I can control the clouds, or something."],
+		"next": {"Sane": "sane_topic8", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic8"}
+	},
+	"sane_topic8":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["But boy, this weather, huh? …"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic9"}
+	},
+	"halfsane_topic1":{
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": [],
+		"next": {"Sane": "sane_topic2", "Half-Sane": "halfsane_topic2", "Insane": "insane_topic2"}
+	},
 }
