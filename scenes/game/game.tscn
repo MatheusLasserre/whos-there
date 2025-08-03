@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bxp7xau32jb84"]
+[gd_scene load_steps=37 format=3 uid="uid://bxp7xau32jb84"]
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://d1rp4qsndbb6u" path="res://scenes/game/timer.gd" id="6_2a8rs"]
 [ext_resource type="Shader" uid="uid://bwvvyvjuny2bu" path="res://assets/shaders/crt_blur.gdshader" id="6_5i0tg"]
 [ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="6_bdhmt"]
+[ext_resource type="AudioStream" uid="uid://cc3higdwoj53u" path="res://SFX/yapping.mp3" id="7_pg2xm"]
 [ext_resource type="Texture2D" uid="uid://dt88jnsjno457" path="res://CORRUPTION/corruption_1.png" id="7_uyinl"]
 [ext_resource type="Material" uid="uid://k8m18iwtsp" path="res://assets/materials/static.tres" id="9_10c2w"]
 [ext_resource type="Texture2D" uid="uid://ynb66icovuxv" path="res://MENUS_nd_UI/Insanity_Under.png" id="9_ftsea"]
@@ -18,7 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://cckblo8ia6r60" path="res://MENUS_nd_UI/Insanity_Fill.png" id="10_otnwt"]
 [ext_resource type="Texture2D" uid="uid://cbvlxi4js64h0" path="res://MENUS_nd_UI/Health_Fill.png" id="11_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://dflq7y0j7fjmu" path="res://MENUS_nd_UI/Timer_Background.png" id="14_5v6r0"]
+[ext_resource type="AudioStream" uid="uid://bttb6jk5svf0k" path="res://SFX/door_close.mp3" id="19_8b66f"]
 [ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="19_10c2w"]
+[ext_resource type="AudioStream" uid="uid://i1shuoexduwh" path="res://SFX/door_open.mp3" id="20_3jaai"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]
 
@@ -143,6 +146,10 @@ anchor_right = 0.669531
 anchor_bottom = 0.715277
 texture = ExtResource("4_87uf6")
 metadata/_edit_use_anchors_ = true
+
+[node name="YapSFX" type="AudioStreamPlayer" parent="Larry/Larry"]
+stream = ExtResource("7_pg2xm")
+bus = &"SFX"
 
 [node name="Corruption" type="TextureRect" parent="Larry"]
 visible = false
@@ -276,6 +283,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="Door/Door/SubViewportContainer/SubViewport/Door/Pivot"]
 transform = Transform3D(0.855, 0, 0, 0, -3.73732e-08, 0.855, 0, -0.855, -3.73732e-08, 0.7, 0, 0)
 texture = ExtResource("3_lfrn8")
+
+[node name="DoorClose" type="AudioStreamPlayer" parent="Door"]
+stream = ExtResource("19_8b66f")
+bus = &"SFX"
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="Door"]
+stream = ExtResource("20_3jaai")
+bus = &"SFX"
 
 [node name="UI" type="CanvasLayer" parent="."]
 

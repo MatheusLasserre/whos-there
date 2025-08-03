@@ -30,6 +30,8 @@ var typing_counter = 0
 @onready var option2: RichTextLabel = $Options/Option2/VBoxContainer/RichTextLabel
 @onready var option3: RichTextLabel = $Options/Option3/VBoxContainer/RichTextLabel
 
+@onready var prompt_select: AudioStreamPlayer = $PromptSelect
+
 func _ready() -> void:
 	#background.visible = false
 	scene_text = load_scene_text()
@@ -156,14 +158,29 @@ func finish() -> void:
 	background.visible = false
 	#get_tree().paused = false
 
+var a: int
+var b: int
+var c: int
+
 func show_options() -> void:
-	if len(dialog_options) != 3:
+	var opts = len(dialog_options)
+	if len(dialog_options) < 3:
 		return
-	options.visible = true
 	
-	option1.text = dialog_options[0]["option"]
-	option2.text = dialog_options[1]["option"]
-	option3.text = dialog_options[2]["option"]
+	options.visible = true
+	a = randi_range(0, opts - 1)
+	
+	b = randi_range(0, opts - 1)
+	while a == b:
+		b = randi_range(0, opts - 1)
+	
+	c = randi_range(0, opts - 1)
+	while a == c or b == c:
+		c = randi_range(0, opts - 1)
+	
+	option1.text = dialog_options[a]["option"]
+	option2.text = dialog_options[b]["option"]
+	option3.text = dialog_options[c]["option"]
 
 func set_blur(value:float):
 	blur.material.set_shader_parameter("blur_amount", value);
@@ -177,21 +194,23 @@ func _on_background_gui_input(event: InputEvent) -> void:
 func _on_option_1_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			choose_option(1)
+			choose_option(a)
 
 func _on_option_2_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			choose_option(2)
+			choose_option(b)
 
 func _on_option_3_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			choose_option(3)
+			choose_option(c)
 
 func choose_option(number:int) -> void:
-	if not options.is_visible_in_tree() or len(dialog_options) != 3:
+	if not options.is_visible_in_tree() or len(dialog_options) < 3:
 		return
+	
+	prompt_select.play()
 	
 	var key = dialog_options[number-1]["key"]
 	var san = larry.get_sanity()

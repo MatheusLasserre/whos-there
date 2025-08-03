@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/yapping.mp3-2e25153e075ed3430c65e844c2d25428.
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

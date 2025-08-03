@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://wxcorirb3w5x"]
+[gd_scene load_steps=16 format=3 uid="uid://wxcorirb3w5x"]
 
 [ext_resource type="Script" uid="uid://bjyytlqn5frvc" path="res://scenes/menu/menu.gd" id="1_037ec"]
 [ext_resource type="Theme" uid="uid://k0g0my122iix" path="res://themes/theme.tres" id="2_037ec"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d0dasq7l4jras" path="res://MENUS_nd_UI/MAIN_MENU.png" id="4_k48pe"]
 [ext_resource type="PackedScene" uid="uid://bnbe3itcn5kp1" path="res://scenes/settings/settings.tscn" id="6_r8yej"]
 [ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="7_3y2rt"]
+[ext_resource type="AudioStream" uid="uid://c87ehsseaqw3u" path="res://SFX/LARRY_Knockk1.mp3" id="8_t0a87"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kaijy"]
 texture = ExtResource("3_k48pe")
@@ -132,3 +133,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_y1o0p")
 visible = false
 
 [node name="Pause" parent="." instance=ExtResource("7_3y2rt")]
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_t0a87")
+autoplay = true
+bus = &"Music"
+parameters/looping = false

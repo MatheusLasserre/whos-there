@@ -8,6 +8,9 @@ var door_closed_degrees: float = 0
 var door_lerp_mod: float = 5
 var is_door_open: bool = false
 
+@onready var door_close: AudioStreamPlayer = $Door/DoorClose
+@onready var door_open: AudioStreamPlayer = $Door/DoorOpen
+
 func _ready() -> void:
 	open_door_button.pressed.connect(toggle_door)
 
@@ -21,6 +24,11 @@ func toggle_door() -> void:
 	is_door_open = !is_door_open
 	open_door_button.text = "Close Door" if is_door_open else "Open Door"
 	SignalBus.emit_signal("toggle_door", is_door_open)
+	
+	if is_door_open:
+		door_open.play()
+	else:
+		door_close.play()
 
 func update_door(delta: float) -> void:
 	var target_rotation = door_open_degrees if is_door_open else door_closed_degrees

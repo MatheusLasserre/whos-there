@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var crt_warp: CRTWarpLayer = $"../CRTWarp Layer"
 @onready var corruption: TextureRect = $Corruption
 
+@onready var yap_sfx: AudioStreamPlayer = $Larry/YapSFX
+
 var sprites = range(1, 35)
 var _sprite_index: int = 0
 
@@ -90,6 +92,9 @@ func animate_larry() -> void:
 	_sprite_index += 1
 	
 	_set_corruption_sprite()
+	
+	if not yap_sfx.playing:
+		yap_sfx.play()
 
 func load_larry(sprite_number):
 	var sprite = "res://LARRY/LARRY1.png".replace("1", str(sprite_number))
