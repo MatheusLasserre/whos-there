@@ -11,6 +11,12 @@ shader_parameter/blur_amount = 0.0
 
 [node name="DialoguePlayer" type="CanvasLayer"]
 script = ExtResource("1_dv1er")
+<<<<<<< Updated upstream
+=======
+scene_text_file = "res://scenes/yapper/yapper.json"
+typing_speed = 0.2
+start_keys = [null]
+>>>>>>> Stashed changes
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 12
