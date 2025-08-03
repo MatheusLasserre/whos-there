@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2w352332gidq"
+path="res://.godot/imported/FIXED YAP.mp3-e40d4577c9b084893df9586b660b2ada.mp3str"
+
+[deps]
+
+source_file="res://SFX/FIXED YAP.mp3"
+dest_files=["res://.godot/imported/FIXED YAP.mp3-e40d4577c9b084893df9586b660b2ada.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
