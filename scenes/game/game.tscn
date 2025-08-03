@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bxp7xau32jb84"]
+[gd_scene load_steps=45 format=3 uid="uid://bxp7xau32jb84"]
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cbvlxi4js64h0" path="res://MENUS_nd_UI/Health_Fill.png" id="11_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://dflq7y0j7fjmu" path="res://MENUS_nd_UI/Timer_Background.png" id="14_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="19_10c2w"]
+[ext_resource type="Texture2D" uid="uid://2c86qdr7o7qx" path="res://MENUS_nd_UI/UI_door_close.png" id="19_gc57s"]
+[ext_resource type="Script" uid="uid://38m5hxbgl3vg" path="res://scenes/game/tutorial.gd" id="21_8b66f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]
 
@@ -60,10 +62,17 @@ bg_color = Color(0.466667, 0.713726, 0, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_87uf6")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_5jirj")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87uf6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3jaai"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a8rs"]
-bg_color = Color(0.813258, 0.813258, 0.813258, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1iff4"]
+bg_color = Color(0.391743, 0.901878, 0.92082, 0.141176)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vuph"]
+bg_color = Color(0.256753, 0.551658, 1, 0.372549)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -72,8 +81,40 @@ shadow_color = Color(0, 0, 0, 0.396078)
 shadow_size = 5
 shadow_offset = Vector2(2, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j704"]
-bg_color = Color(0.564962, 0.564962, 0.564962, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdnak"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h48ew"]
+atlas = ExtResource("19_gc57s")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fty5b"]
+bg_color = Color(0, 0, 0, 0.411765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2dhg"]
+bg_color = Color(1, 1, 1, 0.329412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2fum"]
+atlas = ExtResource("3_lfrn8")
+region = Rect2(26.2957, 112.569, 63.4075, 37.9117)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_firvq"]
+texture = SubResource("AtlasTexture_f2fum")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8krtj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fydea"]
+bg_color = Color(0.299308, 0.527517, 0.660866, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_af6p5"]
+bg_color = Color(0.367963, 0.609839, 0.752873, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -82,8 +123,8 @@ shadow_color = Color(0, 0, 0, 0.396078)
 shadow_size = 5
 shadow_offset = Vector2(2, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp23o"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mumkj"]
+bg_color = Color(0.266667, 0.482353, 0.607843, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -94,7 +135,7 @@ shadow_offset = Vector2(2, 5)
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("open_door_button", "door_pivot")]
 script = ExtResource("1_5i0tg")
-open_door_button = NodePath("UI/Controls/VBoxContainer/Open Door")
+open_door_button = NodePath("UI/Controls/VBoxContainer/OpenDoor")
 door_pivot = NodePath("Door/Door/SubViewportContainer/SubViewport/Door/Pivot")
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -290,28 +331,163 @@ mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Controls"]
 layout_mode = 2
-offset_left = 1012.0
-offset_top = 350.0
-offset_right = 1226.0
-offset_bottom = 720.0
+offset_left = 1056.0
+offset_top = 499.0
+offset_right = 1173.0
+offset_bottom = 682.0
 grow_vertical = 2
 alignment = 1
 
-[node name="Open Door" type="Button" parent="UI/Controls/VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
+[node name="OpenDoor" type="Button" parent="UI/Controls/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_bdhmt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_87uf6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2a8rs")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4j704")
-theme_override_styles/normal = SubResource("StyleBoxFlat_kp23o")
-text = "Open Door
-"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3jaai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1iff4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vuph")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wdnak")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Controls/VBoxContainer/OpenDoor"]
+position = Vector2(54, 85.125)
+scale = Vector2(2.21875, 2.22187)
+texture = SubResource("AtlasTexture_h48ew")
 
 [node name="Pause" parent="." instance=ExtResource("19_10c2w")]
+
+[node name="Tutorial" type="CanvasLayer" parent="." node_paths=PackedStringArray("timer_highlight", "health_highlight", "insanity_highlight", "open_door_highlight", "next_button", "text_label")]
+process_mode = 3
+layer = 5
+script = ExtResource("21_8b66f")
+timer_highlight = NodePath("Highlights/Timer")
+health_highlight = NodePath("Highlights/Health")
+insanity_highlight = NodePath("Highlights/Insanity")
+open_door_highlight = NodePath("Highlights/OpenDoor")
+next_button = NodePath("Tutorial/Next")
+text_label = NodePath("Tutorial/Text")
+
+[node name="Highlights" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Opacity" type="Panel" parent="Tutorial/Highlights"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fty5b")
+
+[node name="OpenDoor" type="Panel" parent="Tutorial/Highlights"]
+visible = false
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 492.0
+offset_right = 1192.0
+offset_bottom = 683.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2dhg")
+
+[node name="Timer" type="Panel" parent="Tutorial/Highlights"]
+visible = false
+layout_mode = 0
+offset_left = 107.0
+offset_top = 22.0
+offset_right = 259.0
+offset_bottom = 79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2dhg")
+
+[node name="Insanity" type="Panel" parent="Tutorial/Highlights"]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 64.0
+offset_right = 149.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2dhg")
+
+[node name="Health" type="Panel" parent="Tutorial/Highlights"]
+visible = false
+layout_mode = 0
+offset_left = 177.0
+offset_top = 266.0
+offset_right = 273.0
+offset_bottom = 713.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2dhg")
+
+[node name="Tutorial" type="Panel" parent="Tutorial"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -140.0
+offset_right = 220.5
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_firvq")
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_bdhmt")
+theme_override_font_sizes/font_size = 48
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="Tutorial/Tutorial"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.5
+offset_top = 76.0
+offset_right = 3.5
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 19
+text = "Here you can click to open and close the door. You can always open it, but close it... Well, you have good manners, so sometimes you wait others finish talking."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Next" type="Button" parent="Tutorial/Tutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -57.0
+offset_right = 100.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.427451, 0.0627451, 0.0627451, 1)
+theme_override_colors/font_focus_color = Color(0.427451, 0.0627451, 0.0627451, 1)
+theme_override_colors/font_pressed_color = Color(0.427451, 0.0627451, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("6_bdhmt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8krtj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fydea")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_af6p5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mumkj")
+text = "Next
+"
 
 [connection signal="value_changed" from="Sanity/SanityMeter" to="Larry" method="_on_sanity_meter_value_changed"]

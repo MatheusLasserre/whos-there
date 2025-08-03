@@ -9,12 +9,12 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57yh"]
 bg_color = Color(0.133333, 0.0470588, 0, 0.505882)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f2fum"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1hle"]
 atlas = ExtResource("2_vghtj")
 region = Rect2(26.2957, 112.569, 63.4075, 37.9117)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgacw"]
-texture = SubResource("AtlasTexture_f2fum")
+texture = SubResource("AtlasTexture_v1hle")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kol0p"]
 bg_color = Color(0.299308, 0.527517, 0.660866, 1)
