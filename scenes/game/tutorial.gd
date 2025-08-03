@@ -10,11 +10,11 @@ extends CanvasLayer
 const sequence := ["health", "insanity", "door", "timer", "extra"]
 
 const text_dict: Dictionary[String, String] = {
-	"health": "That's your health bar. Staying shut at home is not good for your health.",
+	"health": "That's your health bar. Staying shut in at home is not good for your health.",
 	"insanity": "That's your insanity meter. Talking with others can help... Sometimes.",
-	"door": "Here you can click to open and close the door. You can always open it. For closing it... Well, you have good manners, so sometimes you have to wait for others to finish talking.",
-	"timer": "Here it's your timer. Try to be healthy and sane till it hit's 0.",
-	"extra": "Oh, I think someone is knocking at your door. I think you should open the door and choose a topic to talk... carefully."
+	"door": "Here you can click to open and close the door. You can always open it, but to close it... Well, you have good manners, so sometimes you have to wait for others to finish talking.",
+	"timer": "Here is your timer. Try to stay healthy and sane until it hits 0.",
+	"extra": "Oh, I think someone is knocking at your door. I think you should open the door and choose a topic to talk about... carefully."
 }
 var panel_dict: Dictionary[String, Panel]
 var cur_index := 0

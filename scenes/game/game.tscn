@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="19_10c2w"]
 [ext_resource type="Texture2D" uid="uid://2c86qdr7o7qx" path="res://MENUS_nd_UI/UI_door_close.png" id="19_gc57s"]
 [ext_resource type="AudioStream" uid="uid://i1shuoexduwh" path="res://SFX/door_open.mp3" id="20_3jaai"]
-[ext_resource type="Script" path="res://scenes/game/tutorial.gd" id="21_8b66f"]
+[ext_resource type="Script" uid="uid://38m5hxbgl3vg" path="res://scenes/game/tutorial.gd" id="21_8b66f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]
 
@@ -474,7 +474,7 @@ offset_right = 3.5
 offset_bottom = 193.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 19
-text = "Here you can click to open and close the door. You can always open it, but close it... Well, you have good manners, so sometimes you wait others finish talking."
+text = "Here you can click to open and close the door. You can always open it, but to close it... Well, you have good manners, so sometimes you have to wait for others to finish talking."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
