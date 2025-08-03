@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=3 uid="uid://cg68lsqjrni7d"]
+
+[ext_resource type="Script" uid="uid://cvshbjjikaq6g" path="res://scenes/endgame/endgame.gd" id="1_6ocmu"]
+[ext_resource type="Texture2D" uid="uid://blkfyyhyelewf" path="res://COMICS/WIN.png" id="1_m2sqe"]
+[ext_resource type="Texture2D" uid="uid://bkvas2ngugvob" path="res://COMICS/LOST.png" id="2_6ocmu"]
+[ext_resource type="FontFile" uid="uid://b6oylqhf1eoj4" path="res://assets/fonts/Hey Comic.otf" id="4_q087m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q087m"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dc41r"]
+texture = ExtResource("1_m2sqe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jtml8"]
+texture = ExtResource("2_6ocmu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q087m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc41r"]
+bg_color = Color(0.391743, 0.901878, 0.92082, 0.141176)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtml8"]
+bg_color = Color(0.256753, 0.551658, 1, 0.372549)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 5
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uclek"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Endgame" type="Node2D" node_paths=PackedStringArray("win_container", "lose_container", "label_text1", "label_text2", "label_text3", "label_text4")]
+script = ExtResource("1_6ocmu")
+win_container = NodePath("CanvasLayer/WinContainer")
+lose_container = NodePath("CanvasLayer/LoseContainer")
+label_text1 = NodePath("CanvasLayer/Label")
+label_text2 = NodePath("CanvasLayer/Label2")
+label_text3 = NodePath("CanvasLayer/Label3")
+label_text4 = NodePath("CanvasLayer/Label4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q087m")
+
+[node name="WinContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.5313
+
+[node name="Win" type="Panel" parent="CanvasLayer/WinContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dc41r")
+
+[node name="LoseContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.5313
+
+[node name="Lose" type="Panel" parent="CanvasLayer/LoseContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jtml8")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 836.0
+offset_top = 11.0
+offset_right = 1257.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("4_q087m")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 837.0
+offset_top = 183.0
+offset_right = 1254.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("4_q087m")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 839.0
+offset_top = 355.0
+offset_right = 1256.0
+offset_bottom = 387.0
+theme_override_fonts/font = ExtResource("4_q087m")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 839.0
+offset_top = 532.0
+offset_right = 1256.0
+offset_bottom = 564.0
+theme_override_fonts/font = ExtResource("4_q087m")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
+[node name="MainMenu" type="Button" parent="CanvasLayer"]
+visible = false
+offset_left = 998.0
+offset_top = 672.0
+offset_right = 1135.0
+offset_bottom = 707.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_q087m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q087m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dc41r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtml8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uclek")
+text = "Main Menu"
