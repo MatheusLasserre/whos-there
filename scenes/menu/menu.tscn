@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d0dasq7l4jras" path="res://MENUS_nd_UI/MAIN_MENU.png" id="4_k48pe"]
 [ext_resource type="PackedScene" uid="uid://bnbe3itcn5kp1" path="res://scenes/settings/settings.tscn" id="6_r8yej"]
 [ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="7_3y2rt"]
-[ext_resource type="AudioStream" uid="uid://c87ehsseaqw3u" path="res://SFX/LARRY_Knockk1.mp3" id="8_t0a87"]
+[ext_resource type="AudioStream" uid="uid://dhxihia5gqyyl" path="res://SFX/FIXED THEME.mp3" id="8_t0a87"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kaijy"]
 texture = ExtResource("3_k48pe")

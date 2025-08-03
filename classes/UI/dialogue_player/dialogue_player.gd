@@ -181,6 +181,7 @@ func show_options() -> void:
 	if len(dialog_options) < 3:
 		return
 	
+	SignalBus.emit_signal("pause_yap")
 	options.visible = true
 	a = randi_range(0, opts - 1)
 	

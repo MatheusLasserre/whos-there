@@ -18,6 +18,7 @@ var _health: float = 100.0;
 
 func _ready() -> void:
 	SignalBus.larry_animate.connect(animate_larry)
+	SignalBus.pause_yap.connect(_pause_yap)
 	set_sanity(_sanity)
 	set_health(_health)
 
@@ -104,6 +105,9 @@ func load_larry(sprite_number):
 	var sprite = "res://LARRY/LARRY1.png".replace("1", str(sprite_number))
 	return load(sprite)
 
+func _pause_yap():
+	if yap_sfx.playing:
+		yap_sfx.stop()
 
 func _on_sanity_meter_value_changed(value: float) -> void:
 	set_sanity(value)

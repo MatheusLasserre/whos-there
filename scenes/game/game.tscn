@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://d1rp4qsndbb6u" path="res://scenes/game/timer.gd" id="6_2a8rs"]
 [ext_resource type="Shader" uid="uid://bwvvyvjuny2bu" path="res://assets/shaders/crt_blur.gdshader" id="6_5i0tg"]
 [ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="6_bdhmt"]
-[ext_resource type="AudioStream" uid="uid://cc3higdwoj53u" path="res://SFX/yapping.mp3" id="7_pg2xm"]
+[ext_resource type="AudioStream" uid="uid://c2w352332gidq" path="res://SFX/FIXED YAP.mp3" id="7_1iff4"]
 [ext_resource type="Texture2D" uid="uid://dt88jnsjno457" path="res://CORRUPTION/corruption_1.png" id="7_uyinl"]
 [ext_resource type="Material" uid="uid://k8m18iwtsp" path="res://assets/materials/static.tres" id="9_10c2w"]
 [ext_resource type="Texture2D" uid="uid://ynb66icovuxv" path="res://MENUS_nd_UI/Insanity_Under.png" id="9_ftsea"]
@@ -189,7 +189,7 @@ texture = ExtResource("4_87uf6")
 metadata/_edit_use_anchors_ = true
 
 [node name="YapSFX" type="AudioStreamPlayer" parent="Larry/Larry"]
-stream = ExtResource("7_pg2xm")
+stream = ExtResource("7_1iff4")
 bus = &"SFX"
 
 [node name="Corruption" type="TextureRect" parent="Larry"]

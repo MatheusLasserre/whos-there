@@ -11,3 +11,5 @@ signal timer_end()
 signal health_depleted()
 
 signal sanity_maxed()
+
+signal pause_yap()

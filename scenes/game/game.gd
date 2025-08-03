@@ -33,6 +33,7 @@ func toggle_door() -> void:
 		door_open.play()
 	else:
 		door_close.play()
+		SignalBus.emit_signal("pause_yap")
 
 func update_door(delta: float) -> void:
 	var target_rotation = door_open_degrees if is_door_open else door_closed_degrees
