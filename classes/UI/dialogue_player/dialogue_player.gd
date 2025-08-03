@@ -192,6 +192,7 @@ func show_options() -> void:
 	while a == c or b == c:
 		c = randi_range(0, opts - 1)
 	
+	#print("a: %d; b: %d; c: %d" % [a, b, c])
 	option1.text = dialog_options[a]["option"]
 	option2.text = dialog_options[b]["option"]
 	option3.text = dialog_options[c]["option"]
@@ -226,12 +227,13 @@ func choose_option(number:int) -> void:
 	
 	prompt_select.play()
 	
-	var key = dialog_options[number-1]["key"]
-	larry.increase_sanity(float(dialog_options[number-1]["sanity"]))
+	var key = dialog_options[number]["key"]
+	larry.increase_sanity(float(dialog_options[number]["sanity"]))
 	var san = larry.get_sanity()
 	if san >= 80:
 		on_display_dialog(key["Insane"])
-	elif san >= 40:
-		on_display_dialog(key["Half-Sane"])
+	#elif san >= 40:
+		#on_display_dialog(key["Half-Sane"])
 	else:
+		#print("%d/%d: %s" % [((number-1) % 10)+1, number, key["Sane"]])
 		on_display_dialog(key["Sane"])

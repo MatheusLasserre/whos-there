@@ -17,155 +17,155 @@
 		"dialog_options": [
 			{
 				"option": "[center][color=black]Good evening!",
-				"key": {"Sane": "sane_plus_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-10"
 			},
 			{
 				"option": "[center][color=black]Who’s There (™)?",
-				"key": {"Sane": "sane_plus_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-20"
 			},
 			{
 				"option": "[center][color=black]Sorry, no solicitors.",
-				"key": {"Sane": "sane_plus_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-20"
 			},
 			{
 				"option": "[center][color=black]Did you hear that noise this morning?",
-				"key": {"Sane": "sane_plus_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-30"
 			},
 			{
 				"option": "[center][color=black]Do you know where I can find batteries?",
-				"key": {"Sane": "sane_plus_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-20"
 			},
 			{
 				"option": "[center][color=black]I’m scared",
-				"key": {"Sane": "sane_plus_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-10"
 			},
 			{
 				"option": "[center][color=black]I don’t understand what’s going on here.",
-				"key": {"Sane": "sane_plus_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-10"
 			},
 			{
 				"option": "[center][color=black]GET OUT OF HERE",
-				"key": {"Sane": "sane_plus_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-10"
 			},
 			{
 				"option": "[center][color=black]My TV isn’t working",
-				"key": {"Sane": "sane_plus_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-20"
 			},
 			{
 				"option": "[center][color=black]Is your refrigerator running",
-				"key": {"Sane": "sane_plus_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_plus_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "-20"
 			},
 			
 			{
 				"option": "[center][color=black]…",
-				"key": {"Sane": "sane_neutral_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]You’re still here?",
-				"key": {"Sane": "sane_neutral_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]Sorry, I can’t talk to you right now",
-				"key": {"Sane": "sane_neutral_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]I don’t know whats going on.",
-				"key": {"Sane": "sane_neutral_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]What’s with the suit?",
-				"key": {"Sane": "sane_neutral_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]Don’t you have other things to do?",
-				"key": {"Sane": "sane_neutral_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]Do you wanna come inside?",
-				"key": {"Sane": "sane_neutral_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]No.",
-				"key": {"Sane": "sane_neutral_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]Let’s talk.",
-				"key": {"Sane": "sane_neutral_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			{
 				"option": "[center][color=black]Sorry, is this about the shouting?",
-				"key": {"Sane": "sane_neutral_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"key": {"Sane": "sane_neutral_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
 				"sanity": "0"
 			},
 			
 			{
 				"option": "[center][color=black]What do you want?",
-				"key": {"Sane": "sane_minus_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "10"
+				"key": {"Sane": "sane_minus_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			},
 			{
 				"option": "[center][color=black]Do you know where they went?",
-				"key": {"Sane": "sane_minus_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "10"
+				"key": {"Sane": "sane_minus_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			},
 			{
 				"option": "[center][color=black]You don’t have to knock, you know",
-				"key": {"Sane": "sane_minus_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "20"
+				"key": {"Sane": "sane_minus_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "10"
 			},
 			{
 				"option": "[center][color=black]Hey.",
-				"key": {"Sane": "sane_minus_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "10"
+				"key": {"Sane": "sane_minus_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			},
 			{
 				"option": "[center][color=black]Hello?",
-				"key": {"Sane": "sane_minus_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "10"
+				"key": {"Sane": "sane_minus_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			},
 			{
 				"option": "[center][color=black]Hi",
-				"key": {"Sane": "sane_minus_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "10"
+				"key": {"Sane": "sane_minus_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			},
 			{
 				"option": "[center][color=black]Please leave me alone",
-				"key": {"Sane": "sane_minus_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "20"
+				"key": {"Sane": "sane_minus_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			},
 			{
 				"option": "[center][color=black]I want to leave.",
-				"key": {"Sane": "sane_minus_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "20"
+				"key": {"Sane": "sane_minus_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "10"
 			},
 			{
 				"option": "[center][color=black]Don’t make me hurt you.",
-				"key": {"Sane": "sane_minus_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "10"
+				"key": {"Sane": "sane_minus_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			},
 			{
 				"option": "[center][color=black]Am I going insane?",
-				"key": {"Sane": "sane_minus_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
-				"sanity": "10"
+				"key": {"Sane": "sane_minus_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_option"},
+				"sanity": "5"
 			}
 		]
 	},
