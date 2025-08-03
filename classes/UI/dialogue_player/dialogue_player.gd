@@ -80,6 +80,13 @@ func on_display_dialog(text_key):
 	if not _door_open:
 		end()
 		return
+	var san = larry.get_sanity()
+	if san >= 80:
+		set_blur(1.5)
+	elif san >= 40:
+		set_blur(1.0)
+	else:
+		set_blur(0.5)
 	
 	if in_progress and not is_typing:
 		next_line()
