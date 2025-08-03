@@ -31,7 +31,9 @@ var current_text_length = 0
 var visible_characters = 0
 var label_arr: Array[Label]
 var cur_text_idx: int = 0
+
 func _ready() -> void:
+	main_menu.pressed.connect(handle_main_menu)
 	populate_label_array()
 	if GameManager.game_status == 'win':
 		win_container.visible = true
@@ -48,7 +50,6 @@ func _process(delta: float) -> void:
 	process_typing_text(delta)
 
 func process_typing_text(delta: float) -> void:
-	main_menu.pressed.connect(handle_main_menu)
 	if cur_text_idx == label_arr.size():
 		main_menu.visible = true
 		return
