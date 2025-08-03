@@ -22,7 +22,6 @@ func _process(_delta: float) -> void:
 
 func toggle_door() -> void:
 	is_door_open = !is_door_open
-	open_door_button.text = "Close Door" if is_door_open else "Open Door"
 	SignalBus.emit_signal("toggle_door", is_door_open)
 	
 	if is_door_open:
