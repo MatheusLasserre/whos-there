@@ -11,7 +11,9 @@ extends CanvasLayer
 @export var health_rate: float = 2.0
 
 func _ready() -> void:
-	pass
+	SignalBus.timer_end.connect(_print_time_left)
+	SignalBus.health_depleted.connect(_print_time_left)
+	SignalBus.sanity_maxed.connect(_print_time_left)
 
 func set_timer(value: float) -> void:
 	time = value
@@ -33,10 +35,13 @@ func _is_door_open()->bool:
 func _increment_sanity(value:float)->void:
 	var san = larry.get_sanity()
 	var scale_factor = (100.0 - san) * sanity_rate
-	if scale_factor < 0.01:
-		scale_factor = 0.01
+	if scale_factor < 1:
+		scale_factor = 1
 	larry.set_sanity(san + scale_factor * value)
 
 func _decrement_health(value:float)->void:
 	var health = larry.get_health()
 	larry.set_health(health - health_rate*value)
+
+func _print_time_left()->void:
+	print("%d:%02d" % [int(time/60), int(time)%60])

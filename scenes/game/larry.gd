@@ -109,5 +109,5 @@ func _pause_yap():
 	if yap_sfx.playing:
 		yap_sfx.stop()
 
-func _on_sanity_meter_value_changed(value: float) -> void:
-	set_sanity(value)
+#func _on_sanity_meter_value_changed(value: float) -> void:
+	#set_sanity(value)

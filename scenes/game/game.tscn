@@ -258,6 +258,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="CanvasLayer" parent="."]
 script = ExtResource("6_2a8rs")
+sanity_rate = 0.01
 
 [node name="ColorRect" type="TextureRect" parent="Timer"]
 material = ExtResource("9_10c2w")
