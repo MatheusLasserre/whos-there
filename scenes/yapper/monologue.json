@@ -11,7 +11,7 @@
 	},
 	"open_2": {
 		"text": [
-			"huh what did you just do?"
+			"Huh, what did you just do?"
 		],
 		"next": {
 			"Sane": "_option_holder",
@@ -21,7 +21,7 @@
 	},
 	"open_3": {
 		"text": [
-			"why did you do that?"
+			"Why did you do that?"
 		],
 		"next": {
 			"Sane": "_option_holder",
