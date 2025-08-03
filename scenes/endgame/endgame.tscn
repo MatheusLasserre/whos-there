@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cg68lsqjrni7d"]
 
 [ext_resource type="Script" uid="uid://cvshbjjikaq6g" path="res://scenes/endgame/endgame.gd" id="1_6ocmu"]
-[ext_resource type="Texture2D" uid="uid://blkfyyhyelewf" path="res://COMICS/WIN.png" id="1_m2sqe"]
-[ext_resource type="Texture2D" uid="uid://bkvas2ngugvob" path="res://COMICS/LOST.png" id="2_6ocmu"]
+[ext_resource type="Texture2D" uid="uid://bjxhy51g2bmrf" path="res://COMICS/WIN.png" id="1_m2sqe"]
+[ext_resource type="Texture2D" uid="uid://cfqoxkthu0sw8" path="res://COMICS/LOST.png" id="2_6ocmu"]
 [ext_resource type="FontFile" uid="uid://b6oylqhf1eoj4" path="res://assets/fonts/Hey Comic.otf" id="4_q087m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q087m"]

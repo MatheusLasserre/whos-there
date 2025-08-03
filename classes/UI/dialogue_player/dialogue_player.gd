@@ -74,7 +74,7 @@ func _on_door_toggled(toggle:bool)->void:
 			on_display_dialog(start_keys[0])
 			_first = false
 		else:
-			on_display_dialog(start_keys[randi_range(1, len(start_keys))])
+			on_display_dialog(start_keys[randi_range(1, len(start_keys)-1)])
 
 func on_display_dialog(text_key):
 	if not _door_open:

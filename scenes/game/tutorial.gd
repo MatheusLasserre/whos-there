@@ -27,7 +27,6 @@ func _ready() -> void:
 	populate_panel_dict()
 	set_current_step()
 
-
 func handle_next() -> void:
 	if cur_index == max_index:
 		self.visible = false
