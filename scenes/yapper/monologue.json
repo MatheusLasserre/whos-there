@@ -1,27 +1,313 @@
 {
-	"yap_test": {
-		"color": "red",
-		"alignment": "center",
-		"font_size": 36,
-		"text": [
-			"This is a Test.",
-			"And So is This."
-		],
+	"open_1": {
+		"text": ["Hello!"],
+		"next": {"Sane": "_option_holder", "Half-Sane": "_option_holder", "Insane": "_option_holder"}
+	},
+	"open_2": {
+		"text": ["huh what did you just do?"],
+		"next": {"Sane": "_option_holder", "Half-Sane": "_option_holder", "Insane": "_option_holder"}
+	},
+	"open_3": {
+		"text": ["why did you do that?"],
+		"next": {"Sane": "_option_holder", "Half-Sane": "_option_holder", "Insane": "_option_holder"}
+	},
+	
+	"_option_holder": {
+		"text": [],
 		"dialog_options": [
 			{
-				"option": "[center][color=black]Option 1",
-				"key": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+				"option": "[center][color=black]Good evening!",
+				"key": {"Sane": "sane_plus_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-10"
 			},
 			{
-				"option": "[center][color=black]Option 2",
-				"key": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+				"option": "[center][color=black]Who’s There (™)?",
+				"key": {"Sane": "sane_plus_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-20"
 			},
 			{
-				"option": "[center][color=black]Option 3",
-				"key": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+				"option": "[center][color=black]Sorry, no solicitors.",
+				"key": {"Sane": "sane_plus_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-20"
+			},
+			{
+				"option": "[center][color=black]Did you hear that noise this morning?",
+				"key": {"Sane": "sane_plus_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-30"
+			},
+			{
+				"option": "[center][color=black]Do you know where I can find batteries?",
+				"key": {"Sane": "sane_plus_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-20"
+			},
+			{
+				"option": "[center][color=black]I’m scared",
+				"key": {"Sane": "sane_plus_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-10"
+			},
+			{
+				"option": "[center][color=black]I don’t understand what’s going on here.",
+				"key": {"Sane": "sane_plus_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-10"
+			},
+			{
+				"option": "[center][color=black]GET OUT OF HERE",
+				"key": {"Sane": "sane_plus_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-10"
+			},
+			{
+				"option": "[center][color=black]My TV isn’t working",
+				"key": {"Sane": "sane_plus_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-20"
+			},
+			{
+				"option": "[center][color=black]Is your refrigerator running",
+				"key": {"Sane": "sane_plus_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "-20"
+			},
+			
+			{
+				"option": "[center][color=black]…",
+				"key": {"Sane": "sane_neutral_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]You’re still here?",
+				"key": {"Sane": "sane_neutral_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]Sorry, I can’t talk to you right now",
+				"key": {"Sane": "sane_neutral_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]I don’t know whats going on.",
+				"key": {"Sane": "sane_neutral_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]What’s with the suit?",
+				"key": {"Sane": "sane_neutral_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]Don’t you have other things to do?",
+				"key": {"Sane": "sane_neutral_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]Do you wanna come inside?",
+				"key": {"Sane": "sane_neutral_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]No.",
+				"key": {"Sane": "sane_neutral_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]Let’s talk.",
+				"key": {"Sane": "sane_neutral_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			{
+				"option": "[center][color=black]Sorry, is this about the shouting?",
+				"key": {"Sane": "sane_neutral_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "0"
+			},
+			
+			{
+				"option": "[center][color=black]What do you want?",
+				"key": {"Sane": "sane_minus_option_1", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "10"
+			},
+			{
+				"option": "[center][color=black]Do you know where they went?",
+				"key": {"Sane": "sane_minus_option_2", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "10"
+			},
+			{
+				"option": "[center][color=black]You don’t have to knock, you know",
+				"key": {"Sane": "sane_minus_option_3", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "20"
+			},
+			{
+				"option": "[center][color=black]Hey.",
+				"key": {"Sane": "sane_minus_option_4", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "10"
+			},
+			{
+				"option": "[center][color=black]Hello?",
+				"key": {"Sane": "sane_minus_option_5", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "10"
+			},
+			{
+				"option": "[center][color=black]Hi",
+				"key": {"Sane": "sane_minus_option_6", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "10"
+			},
+			{
+				"option": "[center][color=black]Please leave me alone",
+				"key": {"Sane": "sane_minus_option_7", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "20"
+			},
+			{
+				"option": "[center][color=black]I want to leave.",
+				"key": {"Sane": "sane_minus_option_8", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "20"
+			},
+			{
+				"option": "[center][color=black]Don’t make me hurt you.",
+				"key": {"Sane": "sane_minus_option_9", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "10"
+			},
+			{
+				"option": "[center][color=black]Am I going insane?",
+				"key": {"Sane": "sane_minus_option_10", "Half-Sane": "halfsane_option", "Insane": "insane_topic1"},
+				"sanity": "10"
 			}
 		]
 	},
+	
+	"sane_plus_option_1": {
+		"text": ["Ah! Good evening to you too.", "What kind manners you have.", "Who taught you these manners?", "You know, too many people these days don’t know how to talk to their fellow man.", "So rude, some folk these days."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_2": {
+		"text": ["Orange.","Orange you glad I didn’t say banana?","Haha…","… wait no, that’s not right.","I think I messed up.","Oh well."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_3": {
+		"text": ["Haha, funny.","Pretending not to know me to tell a joke about me being one of those door to door salesmen.","Quite clever.","Of course, you do know me.","… right?"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_4": {
+		"text": ["Hm?","That noise?","Kind of sounded like a sharp pop that dug straight into your brain, right?","Yes, I have no idea what you’re talking about.","But if you want to talk about loud noises in the building, that does remind me of this other time a few years ago.","There was this annoying squeaking all night long, which wouldn’t stop.","This rhythmic kind of “squeak, squeak, squeak,” very irritating.","I figured after a while that it must be some old pipes in the building, but I went next door and your parents swore that they didn’t hear a thing.","Do you remember?","Oh, no, no, it was before your time.","Yes, about nine months before your time, if I recall."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_5": {
+		"text": ["Batteries?","Hm…","I know I have some batteries somewhere.","Maybe in my kitchen, over the sink?","I could go and check.","What kind do you need?","I’m pretty sure I have double As, I think I might have triple As, I know for a fact we have a couple of those big brick ones…","what are those ones called?","Well, I’ll go check later to see what we have.","If I can find them in the first place!","Without Sheila, I don’t know where anything in the house is, haha."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_6": {
+		"text": ["Scared!","Don’t be.","I’m here.","How about we chat, help get some of the nerves out?"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_7": {
+		"text": ["Well, I got some good news – we’re in the same boat, haha!"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_8": {
+		"text": ["Look at that!","You’re asserting yourself.","You know, a backbone is a really admirable trait to have these days.","I mean, I’m not going anywhere, but I admire the assertiveness anyway."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_9": {
+		"text": ["Your TV?","Well, I’m no mechanic, but I can take a look at it.","Have you tried just unplugging it and plugging it back in?","That usually works for me.","This one time, I was gearing up for the big game, had my snacks and all, and the TV went out cold!","Nearly gave me a heart attack.","Luckily I just gave it a good kick and the screen came back on."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_plus_option_10": {
+		"text": ["Nice try.","I’ve heard that one before!","… but no. It’s not."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	
+	"sane_neutral_option_1": {
+		"text": ["Ah, waiting for me to talk, are you?","Well, don’t mind if I do."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_2": {
+		"text": ["I could ask you the same question."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_3": {
+		"text": ["Right, you must be busy, huh? I get it.","But…"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_4": {
+		"text": ["Well then we’re on the same boat, aren’t we.","No point in panicking about it, how about we pass the time with some conversation?"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_5": {
+		"text": ["This suit?","You like it?","I got it tailor made, you know.","Had to go down and get my measurements done and everything.","Twice!","They lost the measurements the first time, it was a whole thing.","Cost me a pretty penny, too.","Totally worth it though."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_6": {
+		"text": ["Are you kidding!","There’s always time to talk to a neighbor.","Don’t you want to meet the people you’re living in the same building with?"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_7": {
+		"text": ["Oh, no, I can’t stay for too, too long.","That being said…"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_8": {
+		"text": ["I haven’t even said anything yet!","C’mon, you don’t wanna hear what I have to say?","You know, you should always listen to what the people around you have to say – curiosity is a good trait.","I’ve got some interesting stuff on my mind, I’ve been wanting to share with someone, won’t you just listen?","I’d appreciate it."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_9": {
+		"text": ["Okay.","I’ll go first."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_neutral_option_10": {
+		"text": ["The shouting?","Oh, no.","I understand.","I’m not here to complain, I just wanted to chat."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	
+	"sane_minus_option_1": {
+		"text": ["Woah there!","That’s no way to talk to a neighbor!","You should know better."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_2": {
+		"text": ["…"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_3": {
+		"text": ["Why, of course I do!","You know, manners are the backbone of any good society.","Always knock, and always remember your pleases and thank yous.","That’s what my dad always told me, and you ought to know it too.","You ought to learn how to conduct yourself properly."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_4": {
+		"text": ["“Hey.”","Hay is for horses.","How about a “Hello,” huh?","I’d even settle for a “Hi.”"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_5": {
+		"text": ["“Hello?”","You don’t recognize who I am, do you?","After being neighbors for so long.","Wow, I’m crushed.","Whatever happened to a warm “Hi,” or even a “Hey?”"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_6": {
+		"text": ["“Hi.”","Jeez, you got places to be?","Don’t have time for a “Hello,” or a “Hey, how are you?”"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_7": {
+		"text": ["No.","I don’t think I will."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_8": {
+		"text": ["Well, it looks like we both want the same thing.","How about you just stand here and listen to me for a minute, and it’ll all be over soon, yeah?"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_9": {
+		"text": ["Hurt me?","Haha, oh please, I’d like to see you try."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"sane_minus_option_10": {
+		"text": ["Haha.","Yes.","Yes you are."],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	
+	"halfsane_option": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["…"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	"insane_option": {
+		"color": "red",
+		"alignment": "center",
+		"font_size": 36,
+		"text": ["…"],
+		"next": {"Sane": "sane_topic1", "Half-Sane": "halfsane_topic1", "Insane": "insane_topic1"}
+	},
+	
 	"sane_topic1": {
 		"color": "red",
 		"alignment": "center",

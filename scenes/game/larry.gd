@@ -32,6 +32,10 @@ func set_sanity(value:float)->void:
 	if _sanity >= 100.0:
 		SignalBus.emit_signal("sanity_maxed")
 
+func increase_sanity(value:float)->void:
+	_sanity += value
+	set_sanity(_sanity)
+
 func get_health()->float:
 	return _health
 

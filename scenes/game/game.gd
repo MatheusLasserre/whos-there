@@ -8,6 +8,8 @@ var door_closed_degrees: float = 0
 var door_lerp_mod: float = 5
 var is_door_open: bool = false
 
+@onready var dialogue: DialoguePlayer = $DialoguePlayer
+
 @onready var door_close: AudioStreamPlayer = $Door/DoorClose
 @onready var door_open: AudioStreamPlayer = $Door/DoorOpen
 
@@ -18,7 +20,10 @@ func _physics_process(delta: float) -> void:
 	update_door(delta)
 
 func _process(_delta: float) -> void:
-	pass
+	if dialogue.current.contains("_option_") or dialogue.current.contains("open_"):
+		open_door_button.disabled = true
+	else:
+		open_door_button.disabled = false
 
 func toggle_door() -> void:
 	is_door_open = !is_door_open

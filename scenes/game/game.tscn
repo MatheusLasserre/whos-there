@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
-[ext_resource type="Script" uid="uid://dyd3v3fd83afd" path="res://scenes/game/crt_warp_layer.gd" id="3_4j704"]
+[ext_resource type="Script" path="res://scenes/game/crt_warp_layer.gd" id="3_4j704"]
 [ext_resource type="Texture2D" uid="uid://w3dq4f35hkiy" path="res://ENVIRONMENT/BACKGROUBD.png" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://ck5txrr3tvr6u" path="res://ENVIRONMENT/DOOR.png" id="3_lfrn8"]
 [ext_resource type="Texture2D" uid="uid://bm463ejkqw4x" path="res://LARRY/LARRY1.png" id="4_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cnywaxicq8l84" path="res://classes/UI/dialogue_player/dialogue_player.tscn" id="5_bdhmt"]
 [ext_resource type="Script" uid="uid://dj61422p5d7k4" path="res://scenes/game/larry.gd" id="5_kp23o"]
-[ext_resource type="Script" uid="uid://d1rp4qsndbb6u" path="res://scenes/game/timer.gd" id="6_2a8rs"]
+[ext_resource type="Script" path="res://scenes/game/timer.gd" id="6_2a8rs"]
 [ext_resource type="Shader" uid="uid://bwvvyvjuny2bu" path="res://assets/shaders/crt_blur.gdshader" id="6_5i0tg"]
 [ext_resource type="FontFile" uid="uid://ccggu46ydt7dk" path="res://assets/fonts/AURORA-PRO.otf" id="6_bdhmt"]
 [ext_resource type="AudioStream" uid="uid://cc3higdwoj53u" path="res://SFX/yapping.mp3" id="7_pg2xm"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="19_10c2w"]
 [ext_resource type="Texture2D" uid="uid://2c86qdr7o7qx" path="res://MENUS_nd_UI/UI_door_close.png" id="19_gc57s"]
 [ext_resource type="AudioStream" uid="uid://i1shuoexduwh" path="res://SFX/door_open.mp3" id="20_3jaai"]
-[ext_resource type="Script" uid="uid://38m5hxbgl3vg" path="res://scenes/game/tutorial.gd" id="21_8b66f"]
+[ext_resource type="Script" path="res://scenes/game/tutorial.gd" id="21_8b66f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]
 
@@ -286,6 +286,7 @@ metadata/_edit_use_anchors_ = true
 [node name="DialoguePlayer" parent="." instance=ExtResource("5_bdhmt")]
 process_mode = 3
 scene_text_file = "res://scenes/yapper/monologue.json"
+start_keys = Array[String](["open_1", "open_2", "open_3"])
 
 [node name="Corruption" type="CanvasLayer" parent="."]
 

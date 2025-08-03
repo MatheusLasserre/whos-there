@@ -1,3 +1,4 @@
+class_name DialoguePlayer
 extends Node
 
 @export_file("*.json") var scene_text_file
@@ -5,16 +6,18 @@ extends Node
 var scene_text = {}
 var selected_text = []
 var dialog_options = []
+var current: String = ""
 var next: Dictionary = {}
 var in_progress = false
 var is_typing = false
 
 var _door_open = false
+var _first : bool = true
 
 @export var typing_speed = 0.25
 var typing_counter = 0
 
-@export var start_key: String = "yap_test"
+@export var start_keys: Array[String] = []
 
 @export var end_padding: int = 5
 
@@ -67,7 +70,11 @@ func _on_door_toggled(toggle:bool)->void:
 	if not _door_open:
 		end()
 	else:
-		on_display_dialog(start_key)
+		if _first:
+			on_display_dialog(start_keys[0])
+			_first = false
+		else:
+			on_display_dialog(start_keys[randi_range(1, len(start_keys))])
 
 func on_display_dialog(text_key):
 	if not _door_open:
@@ -78,6 +85,7 @@ func on_display_dialog(text_key):
 		next_line()
 	elif not is_typing:
 		#get_tree().paused = true
+		current = text_key
 		options.visible = false
 		background.visible = true
 		in_progress = true
@@ -95,12 +103,18 @@ func process_text_data(data:Dictionary) -> Array:
 	
 	if data.has("color"):
 		color = data["color"]
+	else:
+		color = "red"
 		
 	if data.has("font_size"):
 		font_size = data["font_size"]
+	else:
+		font_size = 36
 		
 	if data.has("alignment"):
 		alignment = data["alignment"]
+	else:
+		alignment = "center"
 	
 	if data.has("dialog_options"):
 		dialog_options = data["dialog_options"]
@@ -213,6 +227,7 @@ func choose_option(number:int) -> void:
 	prompt_select.play()
 	
 	var key = dialog_options[number-1]["key"]
+	larry.increase_sanity(float(dialog_options[number-1]["sanity"]))
 	var san = larry.get_sanity()
 	if san >= 80:
 		on_display_dialog(key["Insane"])
