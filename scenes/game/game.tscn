@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bxp7xau32jb84"]
+[gd_scene load_steps=48 format=3 uid="uid://bxp7xau32jb84"]
 
 [ext_resource type="Script" uid="uid://dr4q8gjkx4jig" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://4c70addhue8d" path="res://ENVIRONMENT/FOREGROUND.png" id="2_kelw5"]
@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://dflq7y0j7fjmu" path="res://MENUS_nd_UI/Timer_Background.png" id="14_5v6r0"]
 [ext_resource type="AudioStream" uid="uid://bttb6jk5svf0k" path="res://SFX/door_close.mp3" id="19_8b66f"]
 [ext_resource type="PackedScene" uid="uid://cof30lnfmenqo" path="res://scenes/pause/pause.tscn" id="19_10c2w"]
-[ext_resource type="AudioStream" uid="uid://i1shuoexduwh" path="res://SFX/door_open.mp3" id="20_3jaai"]
 [ext_resource type="Texture2D" uid="uid://2c86qdr7o7qx" path="res://MENUS_nd_UI/UI_door_close.png" id="19_gc57s"]
+[ext_resource type="AudioStream" uid="uid://i1shuoexduwh" path="res://SFX/door_open.mp3" id="20_3jaai"]
 [ext_resource type="Script" uid="uid://38m5hxbgl3vg" path="res://scenes/game/tutorial.gd" id="21_8b66f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfrn8"]

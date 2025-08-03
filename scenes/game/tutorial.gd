@@ -14,7 +14,7 @@ const text_dict: Dictionary[String, String] = {
 	"insanity": "That's your insanity meter. Talking with others can help... Sometimes.",
 	"door": "Here you can click to open and close the door. You can always open it. For closing it... Well, you have good manners, so sometimes you have to wait for others to finish talking.",
 	"timer": "Here it's your timer. Try to be healthy and sane till it hit's 0.",
-	"extra": "Oh, I think someone is knocking your door. I think you should open the door and choose a topic to talk... carefully."
+	"extra": "Oh, I think someone is knocking at your door. I think you should open the door and choose a topic to talk... carefully."
 }
 var panel_dict: Dictionary[String, Panel]
 var cur_index := 0
